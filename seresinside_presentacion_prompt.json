@@ -1,0 +1,630 @@
+{
+  "project": {
+    "name": "Seres Inside - Propuesta publicitaria 2026",
+    "goal": "Generar una presentación visual, profesional y emocional para reunión interna, basada en el estilo del sitio de Seres Inside y en la estrategia de pauta para el Ciclo de Conferencias y la Diplomatura.",
+    "execution_target": "Cloud Code + Antigravity",
+    "output_mode": "local_web_presentation",
+    "render_requirements": {
+      "format": "responsive HTML/CSS/JS deck",
+      "aspect_ratio": "16:9",
+      "slide_size": "1920x1080",
+      "navigation": "keyboard + click",
+      "offline_ready": true,
+      "export_friendly": true
+    }
+  },
+  "source_inspiration": {
+    "brand_language": [
+      "Emociones que inspiran acción",
+      "De problemas a soluciones",
+      "Una formación que transforma tu manera de enseñar, acompañar y vivir"
+    ],
+    "content_pillars": [
+      "educación emocional aplicada",
+      "bienestar",
+      "vínculos",
+      "conflicto como oportunidad",
+      "formación flexible",
+      "comunidad"
+    ],
+    "visual_style_to_echo": [
+      "hero sections con mucho aire",
+      "bloques modulares claros",
+      "alternancia entre fondos blancos y azul profundo",
+      "cards limpias con beneficios o módulos",
+      "fotografía humana, cálida y realista",
+      "equilibrio entre emocional y profesional"
+    ]
+  },
+  "global_design_system": {
+    "theme_name": "Seres Inside - Deep Blue Calm",
+    "style_principles": [
+      "visual storytelling primero",
+      "minimalismo cálido, no corporativo frío",
+      "sensación de cuidado, claridad y contención",
+      "tipografía grande y respirada",
+      "usar muy pocas palabras por slide",
+      "evitar estética dashboard o demasiadas cajitas"
+    ],
+    "colors": {
+      "primary_navy": "#0B4A8B",
+      "secondary_blue": "#7EA9D1",
+      "soft_background": "#F7F8FA",
+      "warm_white": "#FFFFFF",
+      "text_dark": "#132238",
+      "muted_gray": "#6E7C8C",
+      "success_teal": "#3FA7A3",
+      "soft_beige": "#EDE7DF"
+    },
+    "typography": {
+      "title_font_style": "sans bold rounded or geometric humanist",
+      "body_font_style": "clean sans, high readability",
+      "title_case": "sentence case",
+      "title_weight": 700,
+      "body_weight": 400,
+      "recommended_sizes": {
+        "cover_title": 40,
+        "section_title": 28,
+        "body": 18,
+        "caption": 13
+      }
+    },
+    "shapes_and_components": {
+      "corner_radius": 18,
+      "image_treatment": "rounded rectangles or soft-edged full-bleed crops",
+      "cards": "flat, subtle shadow, no heavy borders",
+      "section_labels": "small pill or slim overline in secondary_blue or navy",
+      "charts": "simple bars/donuts only when needed",
+      "icons": "outline or duotone, minimal"
+    },
+    "image_direction": {
+      "people": "adultos reales de 30 a 55 años, contexto humano y profesional, sin poses demasiado corporativas",
+      "mood": "cercano, reflexivo, confiable, esperanzador",
+      "avoid": [
+        "mockups genéricos de oficina sin emoción",
+        "celebridades",
+        "imágenes infantiles caricaturescas",
+        "estética demasiado académica o rígida"
+      ]
+    },
+    "motion_direction": {
+      "style": "suave y sobrio",
+      "transitions": "fade, slight upward reveal, gentle pan",
+      "avoid": [
+        "transiciones llamativas o teatrales",
+        "animaciones con rebote",
+        "exceso de elementos moviéndose"
+      ]
+    }
+  },
+  "deck": {
+    "title": "Propuesta publicitaria 2026",
+    "subtitle": "Ciclo de Conferencias + Diplomatura en Educación Emocional y Bienestar",
+    "tone": [
+      "estratégico",
+      "humano",
+      "claro",
+      "convincente",
+      "no vendehumo"
+    ],
+    "story_arc": [
+      "contexto y oportunidad",
+      "quién es el público",
+      "qué problema real vive",
+      "cómo se ordena la estrategia",
+      "cómo se ejecutan las dos campañas",
+      "cómo se distribuye presupuesto y expectativa"
+    ],
+    "slides": [
+      {
+        "id": "s01_cover",
+        "title": "Propuesta publicitaria 2026",
+        "purpose": "Apertura elegante y segura",
+        "layout": "split-hero",
+        "background": {
+          "type": "solid_or_gradient",
+          "color": "#F7F8FA",
+          "gradient": "left warm_white to right very_light_blue"
+        },
+        "elements": [
+          {
+            "type": "brand_bar",
+            "position": "top",
+            "style": "thin navy line with subtle light-blue accent"
+          },
+          {
+            "type": "text_block",
+            "align": "left",
+            "width": "45%",
+            "content": {
+              "overline": "Seres Inside",
+              "headline": "Propuesta publicitaria 2026",
+              "subheadline": "Ciclo de Conferencias + Diplomatura en Educación Emocional y Bienestar",
+              "support": "Estrategia de captación, conversión y expansión geográfica"
+            }
+          },
+          {
+            "type": "image",
+            "align": "right",
+            "width": "48%",
+            "style": "full height rounded crop",
+            "visual_prompt": "adult woman or mixed group in warm workshop/learning setting, thoughtful, emotional education vibe, natural light, authentic, Argentina-friendly styling"
+          }
+        ]
+      },
+      {
+        "id": "s02_context",
+        "title": "Punto de partida",
+        "purpose": "Mostrar que la propuesta nace de datos, no de intuición vacía",
+        "layout": "two-column editorial",
+        "background": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "elements": [
+          {
+            "type": "left_text",
+            "content": {
+              "headline": "Muchos contactos, poca conversión",
+              "bullets": [
+                "Base con alto volumen pero muy poco dato calificado",
+                "Gran parte de los leads se pierde en el primer contacto",
+                "La comunicación no siempre coincide con la motivación real del público"
+              ]
+            }
+          },
+          {
+            "type": "right_highlight_card",
+            "style": "navy panel",
+            "content": {
+              "stat_1": "80%+ sin profesión identificada",
+              "stat_2": "62,8% leads perdidos",
+              "stat_3": "3,6% conversión total",
+              "footer": "Diagnóstico: el problema no es solo la pauta, también es el encaje entre mensaje, público y seguimiento"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s03_opportunity",
+        "title": "La oportunidad real",
+        "purpose": "Reencuadrar el problema desde el valor de la marca",
+        "layout": "image-left statement-right",
+        "background": {
+          "type": "solid",
+          "color": "#F7F8FA"
+        },
+        "elements": [
+          {
+            "type": "image",
+            "align": "left",
+            "width": "45%",
+            "style": "tall rounded crop",
+            "visual_prompt": "adult parent or professional in reflective moment, warm but modern, human connection, subtle tension becoming calm"
+          },
+          {
+            "type": "text_block",
+            "align": "right",
+            "content": {
+              "overline": "Insight central",
+              "headline": "No es que no nos entendemos. Interpretamos distinto.",
+              "body": "La campaña debe dejar de vender solo una formación y empezar a mostrar una mejora concreta en vínculos, comunicación y bienestar.",
+              "quote_style_line": "De la emoción a la acción"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s04_audience",
+        "title": "Público base compartido",
+        "purpose": "Definir una base útil para las dos campañas",
+        "layout": "three-cards",
+        "background": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "elements": [
+          {
+            "type": "intro_text",
+            "content": "Adultos de 30 a 55 años que trabajan con personas, sostienen vínculos familiares activos y buscan herramientas prácticas para mejorar su forma de comunicarse, acompañar y vivir."
+          },
+          {
+            "type": "cards",
+            "items": [
+              {
+                "title": "Profesionales del vínculo",
+                "text": "Docentes, psicólogos, psicopedagogos, acompañantes terapéuticos, coaches, trabajadores sociales, formadores y perfiles afines."
+              },
+              {
+                "title": "Padres y madres",
+                "text": "Personas con hijos en edad escolar o adolescente, interesadas en mejorar el vínculo y reducir discusiones repetidas."
+              },
+              {
+                "title": "Búsqueda personal aplicada",
+                "text": "Adultos que ya hicieron cursos similares o que quieren herramientas concretas, no teoría abstracta."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s05_pain_points",
+        "title": "Qué les pasa hoy",
+        "purpose": "Bajar la estrategia a escenas reales",
+        "layout": "two-column with scenario strips",
+        "background": {
+          "type": "solid",
+          "color": "#F7F8FA"
+        },
+        "elements": [
+          {
+            "type": "scenario_list",
+            "align": "left",
+            "items": [
+              "Terminamos discutiendo siempre",
+              "Siento que el otro no me escucha",
+              "Quiero acompañar mejor sin entrar en conflicto",
+              "Necesito herramientas para trabajar con otros sin desgastarme"
+            ]
+          },
+          {
+            "type": "image_stack",
+            "align": "right",
+            "images": [
+              {
+                "visual_prompt": "adult parent with teenage child in home setting, tense but not dramatic, realistic"
+              },
+              {
+                "visual_prompt": "professional conversation in educational or therapeutic context, empathetic, modern"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s06_brand_value",
+        "title": "Qué ofrece Seres Inside",
+        "purpose": "Conectar la necesidad del usuario con el valor del producto",
+        "layout": "centered with modular blocks",
+        "background": {
+          "type": "solid",
+          "color": "#0B4A8B"
+        },
+        "elements": [
+          {
+            "type": "headline_center",
+            "content": "Herramientas para mejorar vínculos, bienestar y práctica cotidiana"
+          },
+          {
+            "type": "four_value_blocks",
+            "items": [
+              "Formación flexible y online",
+              "Aplicación inmediata en la vida y el trabajo",
+              "Comunidad y acompañamiento",
+              "Recorrido práctico, emocional y transformador"
+            ],
+            "style": "white cards over navy background"
+          }
+        ]
+      },
+      {
+        "id": "s07_funnel",
+        "title": "Arquitectura de la estrategia",
+        "purpose": "Mostrar que no son campañas aisladas",
+        "layout": "horizontal flow",
+        "background": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "elements": [
+          {
+            "type": "flow_diagram",
+            "steps": [
+              "Anuncio",
+              "WhatsApp",
+              "Conferencia",
+              "Diplomatura"
+            ],
+            "connectors": "soft arrows",
+            "caption": "La conferencia funciona como puerta de entrada; la diplomatura como profundización y conversión"
+          }
+        ]
+      },
+      {
+        "id": "s08_campaign_1",
+        "title": "Campaña 1 · Ciclo de Conferencias",
+        "purpose": "Definir objetivo y tono de la primera campaña",
+        "layout": "two-column emphasis",
+        "background": {
+          "type": "solid",
+          "color": "#F7F8FA"
+        },
+        "elements": [
+          {
+            "type": "left_text",
+            "content": {
+              "headline": "Objetivo",
+              "body": "Generar interés, conversaciones y primer contacto con la marca desde una problemática cotidiana y reconocible.",
+              "sub_blocks": [
+                "Tono: humano, cercano, aplicable",
+                "Mensaje eje: conflicto, interpretación, vínculo"
+              ]
+            }
+          },
+          {
+            "type": "right_quote_panel",
+            "style": "navy with light blue accents",
+            "content": {
+              "quote": "¿Te pasa que terminan discutiendo siempre?",
+              "small": "Entrada emocional para conversación por WhatsApp"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s09_campaign_1_content",
+        "title": "Activos disponibles · Conferencias",
+        "purpose": "Mostrar un plan realista según el material disponible",
+        "layout": "content-grid",
+        "background": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "elements": [
+          {
+            "type": "content_cards",
+            "items": [
+              "Reel del profesor explicando de qué va el encuentro",
+              "Reel UGC con actriz explicando el ciclo y la invitación",
+              "Gráfica con fotos reales",
+              "Gráfica simple con fecha, valor y CTA",
+              "Reel de gráfica animada / movimiento"
+            ],
+            "style": "clean cards with tiny icon badges"
+          }
+        ]
+      },
+      {
+        "id": "s10_campaign_2",
+        "title": "Campaña 2 · Diplomatura",
+        "purpose": "Definir la segunda campaña y su lógica",
+        "layout": "two-column emphasis",
+        "background": {
+          "type": "solid",
+          "color": "#F7F8FA"
+        },
+        "elements": [
+          {
+            "type": "left_text",
+            "content": {
+              "headline": "Objetivo",
+              "body": "Convertir el interés en una formación más profunda, reforzando flexibilidad, practicidad y transformación sostenida.",
+              "sub_blocks": [
+                "Tono: más sólido y explicativo",
+                "Mensaje eje: formación flexible, útil y aplicable"
+              ]
+            }
+          },
+          {
+            "type": "right_highlight_card",
+            "style": "white card with navy border accent",
+            "content": {
+              "headline": "Promesa",
+              "body": "Una formación que transforma tu manera de enseñar, acompañar y vivir."
+            }
+          }
+        ]
+      },
+      {
+        "id": "s11_campaign_2_content",
+        "title": "Activos disponibles · Diplomatura",
+        "purpose": "Mostrar que ya hay base de contenido suficiente",
+        "layout": "content-grid",
+        "background": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "elements": [
+          {
+            "type": "content_cards",
+            "items": [
+              "Reel testimonio de Karina durante una clase",
+              "Reel UGC de Sol explicando módulos, modalidad y utilidad",
+              "Reel gráfico en movimiento · versión 1",
+              "Reel gráfico en movimiento · versión 2 con música más reconocible",
+              "Gráficas simples",
+              "Gráfica institucional / federal con foco en expansión geográfica"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s12_geo",
+        "title": "Expansión geográfica",
+        "purpose": "Explicar la lógica de segmentación fuera de AMBA",
+        "layout": "map-plus-cards",
+        "background": {
+          "type": "solid",
+          "color": "#F7F8FA"
+        },
+        "elements": [
+          {
+            "type": "map",
+            "style": "simplified Argentina map with highlighted clusters, not a detailed atlas",
+            "clusters": [
+              {
+                "name": "Centro",
+                "provinces": [
+                  "Córdoba",
+                  "Santa Fe",
+                  "Mendoza"
+                ]
+              },
+              {
+                "name": "Norte",
+                "provinces": [
+                  "Jujuy",
+                  "Salta",
+                  "Tucumán"
+                ]
+              },
+              {
+                "name": "Sur",
+                "provinces": [
+                  "Neuquén",
+                  "Río Negro",
+                  "Chubut"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "side_notes",
+            "items": [
+              "Centro: volumen y mejor base de prueba",
+              "Norte: provincias que ya aparecen en la base",
+              "Sur: menor saturación y oportunidad de expansión"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s13_budget",
+        "title": "Presupuesto y timing",
+        "purpose": "Bajar expectativa a números manejables",
+        "layout": "timeline-plus-budget",
+        "background": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "elements": [
+          {
+            "type": "timeline",
+            "items": [
+              "6 abril: lanzamiento de pauta",
+              "6–19 abril: foco fuerte en conferencias",
+              "post conferencia: continuidad diplomatura"
+            ]
+          },
+          {
+            "type": "budget_split",
+            "content": {
+              "total": "$300.000 a $350.000",
+              "phase_1": "70% conferencia / 30% diplomatura",
+              "phase_2": "diplomatura como continuidad"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s14_smart",
+        "title": "Objetivos realistas",
+        "purpose": "Evitar promesas infladas y mostrar control",
+        "layout": "five-metrics",
+        "background": {
+          "type": "solid",
+          "color": "#F7F8FA"
+        },
+        "elements": [
+          {
+            "type": "metric_cards",
+            "items": [
+              "60–80 conversaciones",
+              "10–15 ventas totales estimadas",
+              "−20% leads perdidos",
+              "25.000–40.000 personas alcanzadas",
+              "Costo por conversación optimizado según fase"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s15_whatsapp",
+        "title": "WhatsApp como punto crítico",
+        "purpose": "Mostrar que la conversión no depende solo del anuncio",
+        "layout": "chat-ui + bullets",
+        "background": {
+          "type": "solid",
+          "color": "#0B4A8B"
+        },
+        "elements": [
+          {
+            "type": "mock_chat_panel",
+            "style": "clean simplified WhatsApp-inspired card, not literal screenshot",
+            "messages": [
+              "Hola 👋 ¿Querés info del ciclo o de la diplomatura?",
+              "1. Próxima conferencia",
+              "2. Pack del ciclo",
+              "3. Diplomatura completa"
+            ]
+          },
+          {
+            "type": "right_text",
+            "content": {
+              "headline": "Mejor seguimiento, mejor conversión",
+              "bullets": [
+                "mensaje automático inmediato",
+                "clasificación simple del lead",
+                "respuesta rápida y ordenada"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s16_close",
+        "title": "Cierre",
+        "purpose": "Terminar con una idea clara y accionable",
+        "layout": "full-bleed emotional close",
+        "background": {
+          "type": "image_overlay",
+          "overlay_color": "rgba(11,74,139,0.75)"
+        },
+        "elements": [
+          {
+            "type": "background_image",
+            "visual_prompt": "group of adult learners or educators in warm collaborative environment, calm, hopeful, modern"
+          },
+          {
+            "type": "center_text",
+            "content": {
+              "headline": "La propuesta no busca solo vender una formación.",
+              "subheadline": "Busca ordenar un sistema de adquisición para atraer mejor, convertir mejor y crecer con más coherencia.",
+              "cta_line": "Seres Inside · emociones que inspiran acción"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "implementation_rules": {
+    "must_do": [
+      "Construir la presentación con HTML/CSS/JS limpio y editable",
+      "Dejar todo modular para que cada slide pueda ajustarse fácil",
+      "Usar placeholders o prompts para imágenes cuando no existan assets",
+      "Priorizar legibilidad y aire visual",
+      "Mantener consistencia cromática y tipográfica"
+    ],
+    "must_not_do": [
+      "No usar tablas densas ni dashboards",
+      "No meter demasiados bullets por slide",
+      "No usar stock photos frías de oficina genérica",
+      "No convertir la deck en un documento textual",
+      "No usar animaciones estridentes"
+    ],
+    "preferred_output_structure": {
+      "files": [
+        "index.html",
+        "styles.css",
+        "slides.json",
+        "assets/",
+        "README.md"
+      ],
+      "bonus_if_possible": [
+        "modo presentador",
+        "tecla F para fullscreen",
+        "export to PDF stylesheet"
+      ]
+    }
+  }
+}

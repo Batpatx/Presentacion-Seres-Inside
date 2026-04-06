@@ -1,0 +1,250 @@
+{
+  "project": {
+    "name": "Seres Inside - contenido final de slides",
+    "usage": "JSON de contenido puro para pasarlo a otro GPT, Cloud Code o Antigravity",
+    "language": "es-AR",
+    "presentation_type": "pitch interno",
+    "audience": "dirección / equipo interno",
+    "format": "slide_content_only"
+  },
+  "slides": [
+    {
+      "id": "01",
+      "title": "Propuesta publicitaria 2026",
+      "subtitle": "Ciclo de Conferencias + Diplomatura en Educación Emocional y Bienestar",
+      "supporting_text": "Estrategia de captación, conversión y expansión geográfica"
+    },
+    {
+      "id": "02",
+      "title": "Punto de partida",
+      "bullets": [
+        "Existe un volumen considerable de contactos generados, pero con baja calificación de datos.",
+        "La conversión total es baja y una gran parte de los leads se pierde en el primer contacto.",
+        "La comunicación actual no siempre coincide con la motivación real del público."
+      ],
+      "highlight_box": {
+        "title": "Diagnóstico",
+        "text": "El problema no es solo la pauta: también hay desajuste entre mensaje, público y seguimiento."
+      }
+    },
+    {
+      "id": "03",
+      "title": "La oportunidad real",
+      "headline": "Pasar de vender solo formación a mostrar transformación concreta",
+      "body": "Seres Inside tiene una propuesta sólida, práctica y flexible. La oportunidad está en comunicarla desde problemas cotidianos y mejoras reales en vínculos, bienestar y trabajo con otros.",
+      "quote": "No es que no nos entendemos. Interpretamos distinto."
+    },
+    {
+      "id": "04",
+      "title": "Público base compartido",
+      "body": "Adultos de 30 a 55 años que trabajan con personas, sostienen vínculos familiares activos y buscan herramientas prácticas para mejorar la comunicación, el acompañamiento y el bienestar emocional."
+    },
+    {
+      "id": "05",
+      "title": "Segmentos prioritarios",
+      "columns": [
+        {
+          "title": "Profesionales del vínculo",
+          "items": [
+            "Docentes",
+            "Psicólogos / psicopedagogos",
+            "Acompañantes terapéuticos",
+            "Coaches",
+            "Trabajadores sociales",
+            "Formadores y perfiles afines"
+          ]
+        },
+        {
+          "title": "Padres y madres",
+          "items": [
+            "Con hijos en edad escolar o adolescente",
+            "Interesados en mejorar el vínculo",
+            "Buscan herramientas para evitar discusiones repetidas"
+          ]
+        },
+        {
+          "title": "Desarrollo personal aplicado",
+          "items": [
+            "Personas interesadas en emociones y vínculos",
+            "Personas que ya hicieron cursos similares",
+            "Buscan herramientas prácticas, no teoría abstracta"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "title": "Qué les pasa hoy",
+      "bullets": [
+        "Terminamos discutiendo siempre.",
+        "Siento que el otro no me escucha.",
+        "Quiero acompañar mejor sin entrar en conflicto.",
+        "Necesito herramientas para trabajar con otros sin desgastarme."
+      ],
+      "closing_line": "La campaña debe hablar desde escenas reales, no desde conceptos abstractos."
+    },
+    {
+      "id": "07",
+      "title": "Qué ofrece Seres Inside",
+      "value_points": [
+        "Formación flexible y online",
+        "Aplicación inmediata en la vida y el trabajo",
+        "Comunidad y acompañamiento",
+        "Recorrido práctico, emocional y transformador"
+      ],
+      "closing_line": "No ofrecemos solo contenido: ofrecemos herramientas para vivir y vincularse mejor."
+    },
+    {
+      "id": "08",
+      "title": "Arquitectura de la estrategia",
+      "flow": [
+        "Anuncio",
+        "WhatsApp",
+        "Conferencia",
+        "Diplomatura"
+      ],
+      "caption": "La conferencia funciona como puerta de entrada. La diplomatura, como profundización y conversión."
+    },
+    {
+      "id": "09",
+      "title": "Campaña 1 · Ciclo de Conferencias",
+      "sections": [
+        {
+          "title": "Objetivo",
+          "text": "Generar interés, conversaciones y primer contacto con la marca desde una problemática cotidiana y reconocible."
+        },
+        {
+          "title": "Tono",
+          "text": "Humano, cercano, aplicable."
+        },
+        {
+          "title": "Mensaje eje",
+          "text": "Conflicto, interpretación y vínculo."
+        }
+      ],
+      "example_copy": "¿Te pasa que terminan discutiendo siempre?"
+    },
+    {
+      "id": "10",
+      "title": "Activos disponibles · Conferencias",
+      "items": [
+        "Reel del profesor explicando de qué va el encuentro",
+        "Reel UGC con actriz explicando el ciclo y la invitación",
+        "Gráfica con fotos reales",
+        "Gráfica simple con fecha, valor y CTA",
+        "Reel de gráfica animada / movimiento"
+      ],
+      "note": "Plan de contenidos realista según el material disponible hoy."
+    },
+    {
+      "id": "11",
+      "title": "Campaña 2 · Diplomatura",
+      "sections": [
+        {
+          "title": "Objetivo",
+          "text": "Convertir el interés en una formación más profunda, reforzando flexibilidad, practicidad y transformación sostenida."
+        },
+        {
+          "title": "Tono",
+          "text": "Más sólido, explicativo y orientado a valor."
+        },
+        {
+          "title": "Mensaje eje",
+          "text": "Formación flexible, útil y aplicable."
+        }
+      ],
+      "example_copy": "Una formación que transforma tu manera de enseñar, acompañar y vivir."
+    },
+    {
+      "id": "12",
+      "title": "Activos disponibles · Diplomatura",
+      "items": [
+        "Reel testimonio de Karina durante una clase",
+        "Reel UGC de Sol explicando módulos, modalidad y utilidad",
+        "Reel gráfico en movimiento · versión 1",
+        "Reel gráfico en movimiento · versión 2 con música más reconocible",
+        "Gráficas simples",
+        "Gráfica institucional / federal con foco en expansión geográfica"
+      ],
+      "note": "La diplomatura ya cuenta con activos que combinan prueba social, explicación y recordación."
+    },
+    {
+      "id": "13",
+      "title": "Expansión geográfica",
+      "clusters": [
+        {
+          "name": "Centro",
+          "provinces": [
+            "Córdoba",
+            "Santa Fe",
+            "Mendoza"
+          ],
+          "why": "Buen volumen y mejor base para prueba."
+        },
+        {
+          "name": "Norte",
+          "provinces": [
+            "Jujuy",
+            "Salta",
+            "Tucumán"
+          ],
+          "why": "Provincias que ya aparecen en la base y pueden crecer."
+        },
+        {
+          "name": "Sur",
+          "provinces": [
+            "Neuquén",
+            "Río Negro",
+            "Chubut"
+          ],
+          "why": "Menor saturación y oportunidad de expansión."
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Presupuesto y timing",
+      "budget": {
+        "total": "$300.000 a $350.000",
+        "phase_1": "6–19 abril: 70% conferencia / 30% diplomatura",
+        "phase_2": "Post conferencia: continuidad de diplomatura"
+      },
+      "timeline": [
+        "6 abril: lanzamiento de pauta",
+        "Semana corta previa: producción y ajuste final de piezas",
+        "Conferencia: empuje fuerte de captación",
+        "Después del evento: continuidad y profundización en diplomatura"
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Objetivos realistas",
+      "metrics": [
+        "60–80 conversaciones estimadas",
+        "10–15 ventas totales estimadas",
+        "Reducir en 20% la pérdida de leads",
+        "Alcanzar entre 25.000 y 40.000 personas",
+        "Optimizar el costo por conversación según fase"
+      ],
+      "note": "Objetivos adaptados al tiempo disponible, el material actual y el presupuesto real."
+    },
+    {
+      "id": "16",
+      "title": "WhatsApp como punto crítico",
+      "body": "La conversión no depende solo del anuncio. También depende de la velocidad, claridad y orden del primer contacto.",
+      "action_points": [
+        "Mensaje automático inmediato",
+        "Clasificación simple del lead",
+        "Respuesta rápida y ordenada"
+      ],
+      "closing_line": "Mejor seguimiento = mejor conversión."
+    },
+    {
+      "id": "17",
+      "title": "Cierre",
+      "headline": "La propuesta no busca solo vender una formación.",
+      "body": "Busca ordenar un sistema de adquisición para atraer mejor, convertir mejor y crecer con más coherencia.",
+      "final_line": "Seres Inside · emociones que inspiran acción"
+    }
+  ]
+}

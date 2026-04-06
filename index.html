@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>Seres Inside — Propuesta publicitaria 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#1f2933;--navy2:#18448f;
+  --orange:#e47b02;--orangeL:#ed8f0c;--orangeBg:rgba(228,123,2,.07);--orangeBorder:rgba(228,123,2,.2);
+  --blue:#0699d2;--blueL:#3ab8ef;--blueBg:rgba(6,153,210,.06);--blueBorder:rgba(6,153,210,.15);
+  --bg:#f3f4f7;--bgAlt:#f9f9fb;--white:#ffffff;
+  --text:#1f2933;--textMid:#4e5d6c;--textLight:#7b8794;
+  --r:20px;--rpill:50px;
+  --sh:0 0 14px rgba(0,0,0,.07);--sh2:0 8px 30px rgba(0,0,0,.08);
+}
+html,body{font-family:'Montserrat',system-ui,sans-serif;background:#e8eaed;color:var(--text);overflow:hidden;height:100%;width:100%;-webkit-font-smoothing:antialiased;}
+
+.deck{position:relative;width:100vw;height:100vh;}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .55s ease;}
+.slide.active{opacity:1;pointer-events:auto;}
+.si{width:1920px;height:1080px;transform-origin:center center;position:relative;overflow:hidden;}
+
+/* BG helpers */
+.si .bgi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.si .dim{position:absolute;inset:0;z-index:1;}
+.si .ct{position:relative;z-index:2;width:100%;height:100%;display:flex;}
+
+/* PILL */
+.pill{display:inline-block;background:var(--orangeBg);color:var(--orange);border:1.5px solid var(--orangeBorder);border-radius:var(--rpill);padding:10px 26px;font-size:16px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;font-family:'Poppins',sans-serif;}
+.pill-b{background:var(--blueBg);color:var(--blue);border-color:var(--blueBorder);}
+.pill-w{background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.25);}
+
+/* TYPO — EXTRA LARGE FOR MEET */
+h1{font-size:68px;font-weight:900;line-height:1.06;color:var(--navy);margin-bottom:24px;letter-spacing:-.03em;}
+h2{font-size:54px;font-weight:800;line-height:1.1;color:var(--navy);margin-bottom:22px;letter-spacing:-.02em;}
+h3{font-size:30px;font-weight:700;line-height:1.25;color:var(--navy);margin-bottom:12px;}
+p{font-size:26px;font-weight:500;line-height:1.6;color:var(--textMid);}
+.sm{font-size:20px;color:var(--textLight);font-weight:500;}
+
+/* Dark overrides */
+.dk h1,.dk h2,.dk h3{color:#fff;} .dk p{color:rgba(255,255,255,.8);} .dk .sm{color:rgba(255,255,255,.5);}
+
+.accent{color:var(--orange);} .blue{color:var(--blue);}
+
+/* LAYOUT */
+.col{display:flex;flex-direction:column;justify-content:center;}
+.pad{padding:80px 100px;}
+.center-all{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;width:100%;}
+
+/* CARD */
+.card{background:var(--white);border-radius:var(--r);padding:36px;box-shadow:var(--sh2);}
+
+/* STRIP */
+.strip{padding:24px 34px;margin-bottom:16px;font-size:28px;font-weight:600;color:var(--navy);border-left:5px solid var(--orange);border-radius:0 var(--r) var(--r) 0;background:linear-gradient(90deg,rgba(228,123,2,.06),transparent);font-style:italic;}
+.strip-dk{color:#fff;background:linear-gradient(90deg,rgba(228,123,2,.12),transparent);}
+
+/* FLOW */
+.flow{display:flex;align-items:center;gap:0;}
+.fstep{padding:30px 48px;border-radius:var(--r);font-weight:800;font-size:26px;text-align:center;min-width:210px;background:var(--white);color:var(--navy);box-shadow:var(--sh2);}
+.farrow{font-size:40px;margin:0 12px;color:var(--orange);}
+
+/* CGRID */
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.cc{background:var(--white);border-radius:var(--r);padding:24px 28px;font-size:22px;font-weight:600;color:var(--navy);display:flex;align-items:flex-start;gap:16px;box-shadow:var(--sh);}
+.ib{flex-shrink:0;width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+
+/* METRICS */
+.mrow{display:flex;gap:24px;justify-content:center;}
+.mc{background:var(--white);border-radius:var(--r);padding:38px 28px;text-align:center;flex:1;max-width:250px;box-shadow:var(--sh2);border-top:5px solid var(--orange);}
+.mv{font-size:46px;font-weight:900;color:var(--orange);margin-bottom:10px;}
+.ml{font-size:18px;color:var(--textLight);font-weight:500;line-height:1.4;}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:44px;}
+.tl::before{content:'';position:absolute;left:14px;top:6px;bottom:6px;width:4px;background:linear-gradient(to bottom,var(--orange),var(--blue));border-radius:4px;}
+.ti{position:relative;margin-bottom:32px;padding-left:32px;}
+.ti::before{content:'';position:absolute;left:-34px;top:8px;width:18px;height:18px;background:var(--orange);border-radius:50%;box-shadow:0 0 0 5px rgba(228,123,2,.15);}
+.ti p{font-size:26px;font-weight:600;color:var(--navy);}
+
+/* BUDGET */
+.bt{font-size:52px;font-weight:900;color:var(--orange);margin-bottom:28px;}
+.brow{display:flex;justify-content:space-between;padding:18px 0;border-bottom:2px solid rgba(31,41,51,.08);font-size:22px;}
+.brow:last-child{border-bottom:none;}
+.brow span{color:var(--textLight);} .brow strong{color:var(--navy);}
+
+/* GEO */
+.geo-card{position:relative;overflow:hidden;border-radius:var(--r);height:380px;display:flex;flex-direction:column;justify-content:flex-end;padding:36px;flex:1;box-shadow:var(--sh2);}
+.geo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .5s ease;}
+.geo-card:hover img{transform:scale(1.05);}
+.geo-card .gov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(31,41,51,.92) 0%,rgba(31,41,51,.35) 50%,transparent 100%);z-index:1;}
+.geo-card .gt{position:relative;z-index:2;color:#fff;}
+.geo-card h3{font-size:28px;color:var(--orangeL);margin-bottom:8px;}
+.geo-card p{font-size:22px;color:rgba(255,255,255,.85);}
+
+/* PROGRESS */
+.pbar{position:fixed;top:0;left:0;height:5px;background:linear-gradient(90deg,var(--orange),var(--blue));z-index:200;transition:width .4s ease;}
+.cnt{position:fixed;bottom:26px;right:38px;font-size:15px;font-weight:700;color:var(--textLight);z-index:100;background:rgba(255,255,255,.85);padding:8px 20px;border-radius:var(--rpill);backdrop-filter:blur(8px);box-shadow:var(--sh);font-family:'Poppins',sans-serif;}
+.fbtn{position:fixed;bottom:26px;left:38px;background:rgba(255,255,255,.85);color:var(--textLight);border:none;padding:8px 20px;border-radius:var(--rpill);font-size:13px;font-weight:700;cursor:pointer;z-index:100;backdrop-filter:blur(8px);box-shadow:var(--sh);font-family:'Poppins',sans-serif;letter-spacing:1px;text-transform:uppercase;}
+.fbtn:hover{color:var(--orange);}
+
+/* ANIM */
+.slide.active .fu{animation:fu .6s cubic-bezier(.16,1,.3,1) both;}
+.slide.active .d1{animation-delay:.1s;}.slide.active .d2{animation-delay:.2s;}
+.slide.active .d3{animation-delay:.3s;}.slide.active .d4{animation-delay:.4s;}
+.slide.active .d5{animation-delay:.5s;}.slide.active .d6{animation-delay:.6s;}
+@keyframes fu{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+.logo{height:56px;width:auto;}
+</style>
+</head>
+<body>
+
+<div class="pbar" id="progress"></div>
+<div class="cnt" id="counter">1 / 20</div>
+<button class="fbtn" id="fsBtn">F &middot; Fullscreen</button>
+
+<div class="deck" id="deck">
+
+<!-- 01 COVER -->
+<div class="slide active"><div class="si" style="background:var(--white)">
+  <div class="ct" style="align-items:center">
+    <div style="width:52%" class="col pad">
+      <img src="assets/logo-azul.svg" class="fu" style="height:90px;width:auto;margin-bottom:40px;align-self:flex-start">
+      <h1 class="fu d1" style="font-size:72px">Propuesta<br>publicitaria</h1>
+      <div class="fu d2" style="display:inline-flex;align-items:center;gap:14px;margin-bottom:22px">
+        <div style="background:var(--orange);color:#fff;font-family:'Poppins',sans-serif;font-size:18px;font-weight:800;letter-spacing:3px;padding:10px 28px;border-radius:var(--rpill);text-transform:uppercase">Abril 2026</div>
+      </div>
+      <h3 class="fu d3" style="color:var(--orange);font-weight:700;font-size:28px;margin-bottom:20px">Ciclo de Conferencias + Diplomatura en Educación Emocional y Bienestar</h3>
+      <p class="fu d4" style="font-size:24px;max-width:520px">Estrategia de captación, conversión y expansión geográfica</p>
+      <div class="fu d5" style="margin-top:44px;display:flex;gap:10px">
+        <div style="width:70px;height:5px;background:var(--orange);border-radius:5px"></div>
+        <div style="width:35px;height:5px;background:var(--blue);border-radius:5px;opacity:.4"></div>
+      </div>
+    </div>
+    <div style="width:48%;padding:40px 40px 40px 0;display:flex;align-items:center">
+      <img src="assets/slide01_cover.png" style="width:100%;height:90%;object-fit:cover;border-radius:var(--r);box-shadow:var(--sh2)">
+    </div>
+  </div>
+</div></div>
+
+<!-- 02 PUNTO DE PARTIDA -->
+<div class="slide"><div class="si" style="background:var(--bg)">
+  <div class="ct" style="align-items:stretch">
+    <div style="width:50%" class="col pad">
+      <div class="pill fu">Diagnóstico · 829 contactos analizados</div>
+      <h2 class="fu d1">Punto de partida</h2>
+      <div class="fu d2" style="margin-top:20px">
+        <div class="strip" style="font-size:26px"><strong style="color:var(--orange)">80,94%</strong> de los contactos sin profesión identificada (671/829)</div>
+        <div class="strip" style="font-size:26px"><strong style="color:var(--orange)">72,6%</strong> de leads fuera del embudo activo (No responden + Sin interés)</div>
+        <div class="strip" style="font-size:26px">Solo <strong style="color:var(--orange)">3,62%</strong> de conversión total (30 de 829)</div>
+      </div>
+      <div class="card fu d3" style="border-left:6px solid var(--orange);padding:24px 28px;margin-top:18px">
+        <p style="font-size:22px;color:var(--navy);font-weight:600">El problema no es solo la pauta: hay desajuste entre <strong class="accent">mensaje</strong>, <strong class="accent">público</strong> y <strong class="accent">seguimiento</strong>.</p>
+      </div>
+    </div>
+    <div style="width:50%;padding:44px 50px;display:flex;flex-direction:column;justify-content:center;gap:20px">
+      <!-- Embudo visual con datos reales -->
+      <div class="card fu d3" style="padding:28px">
+        <p style="font-size:16px;color:var(--textLight);margin-bottom:18px;font-weight:700;letter-spacing:2px;font-family:'Poppins',sans-serif">EMBUDO REAL DE CONTACTOS</p>
+        <div style="margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:18px;font-weight:600;color:var(--navy)">Base total</span><span style="font-size:18px;font-weight:800;color:var(--navy)">829</span></div>
+          <div style="height:26px;background:var(--bg);border-radius:13px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,var(--orange),var(--orangeL));border-radius:13px"></div></div>
+        </div>
+        <div style="margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:18px;font-weight:600;color:var(--navy)">No responden</span><span style="font-size:18px;font-weight:800;color:#c0392b">521 (62,86%)</span></div>
+          <div style="height:26px;background:var(--bg);border-radius:13px;overflow:hidden"><div style="width:62.86%;height:100%;background:#c0392b;border-radius:13px"></div></div>
+        </div>
+        <div style="margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:18px;font-weight:600;color:var(--navy)">Sin interés</span><span style="font-size:18px;font-weight:800;color:#e67e22">81 (9,77%)</span></div>
+          <div style="height:26px;background:var(--bg);border-radius:13px;overflow:hidden"><div style="width:9.77%;height:100%;background:#e67e22;border-radius:13px"></div></div>
+        </div>
+        <div style="margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:18px;font-weight:600;color:var(--navy)">Seguimiento activo</span><span style="font-size:18px;font-weight:800;color:var(--blue)">99 (11,94%)</span></div>
+          <div style="height:26px;background:var(--bg);border-radius:13px;overflow:hidden"><div style="width:11.94%;height:100%;background:var(--blue);border-radius:13px"></div></div>
+        </div>
+        <div style="margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:18px;font-weight:600;color:var(--navy)">Para conferencias</span><span style="font-size:18px;font-weight:800;color:var(--blue)">65 (7,84%)</span></div>
+          <div style="height:26px;background:var(--bg);border-radius:13px;overflow:hidden"><div style="width:7.84%;height:100%;background:var(--blueL);border-radius:13px"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:18px;font-weight:700;color:var(--navy)">Convertidos (Estudiante + Becados)</span><span style="font-size:18px;font-weight:900;color:var(--orange)">30 (3,62%)</span></div>
+          <div style="height:26px;background:var(--bg);border-radius:13px;overflow:hidden"><div style="width:3.62%;height:100%;background:var(--orange);border-radius:13px;min-width:16px"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 03 LA OPORTUNIDAD -->
+<div class="slide"><div class="si">
+  <img src="assets/slide03_opportunity.png" class="bgi">
+  <div class="dim" style="background:linear-gradient(90deg,rgba(255,255,255,.05) 0%,rgba(243,244,247,.97) 40%,rgba(243,244,247,1) 100%)"></div>
+  <div class="ct" style="align-items:center">
+    <div style="width:40%"></div>
+    <div style="width:60%" class="col pad">
+      <div class="pill fu">Insight central</div>
+      <div class="fu d1" style="border-left:5px solid var(--orange);padding-left:36px;margin:20px 0">
+        <p style="font-size:40px;font-weight:500;font-style:italic;color:var(--navy);line-height:1.35">"No es que no nos entendemos.<br>Interpretamos distinto."</p>
+      </div>
+      <p class="fu d2" style="font-size:26px;max-width:580px;margin-top:20px">Seres Inside tiene una propuesta sólida, práctica y flexible. La oportunidad está en comunicarla desde problemas cotidianos.</p>
+      <p class="fu d3" style="margin-top:24px;font-weight:800;color:var(--orange);font-size:24px">→ De vender formación a mostrar transformación concreta</p>
+    </div>
+  </div>
+</div></div>
+
+<!-- 04 PÚBLICO BASE -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct" style="flex-direction:column;justify-content:center;padding:70px 100px">
+    <div class="pill fu">Audiencia</div>
+    <h2 class="fu d1">Público base compartido</h2>
+    <p class="fu d2" style="max-width:1000px;margin-bottom:48px;font-size:28px">Adultos de 30 a 55 años que trabajan con personas, sostienen vínculos familiares activos y buscan herramientas prácticas para mejorar la comunicación y el bienestar emocional.</p>
+    <div style="display:flex;gap:24px" class="fu d3">
+      <div class="card" style="flex:1;border-top:5px solid var(--orange)">
+        <h3 style="color:var(--orange);font-size:28px">Profesionales del vínculo</h3>
+        <p style="font-size:24px">Docentes · Psicólogos · Psicopedagogos · Acompañantes terapéuticos · Coaches · Trabajadores sociales</p>
+      </div>
+      <div class="card" style="flex:1;border-top:5px solid var(--blue)">
+        <h3 style="color:var(--blue);font-size:28px">Padres y madres</h3>
+        <p style="font-size:24px">Con hijos en edad escolar o adolescente · Interesados en mejorar el vínculo · Buscan evitar discusiones repetidas</p>
+      </div>
+      <div class="card" style="flex:1;border-top:5px solid var(--navy2)">
+        <h3 style="color:var(--navy2);font-size:28px">Desarrollo personal</h3>
+        <p style="font-size:24px">Interesados en emociones y vínculos · Ya hicieron cursos similares · Buscan herramientas prácticas</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 05a BUYER PERSONA: CAROLINA (Educación) -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct" style="align-items:stretch">
+    <div style="width:30%;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 32px;gap:22px">
+      <div class="pill fu">Buyer Persona 1</div>
+      <img src="assets/persona_carolina.png" class="fu d1" style="width:280px;height:280px;border-radius:50%;object-fit:cover;box-shadow:var(--sh2);border:5px solid var(--white)">
+      <h3 class="fu d2" style="text-align:center;font-size:30px;color:var(--navy);margin:0">Carolina</h3>
+      <p class="fu d2" style="text-align:center;font-size:22px;color:var(--orange);font-weight:700;margin:0">Profesional de la educación</p>
+      <div class="fu d3" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+        <span style="background:var(--orangeBg);border:1px solid var(--orangeBorder);border-radius:20px;padding:8px 18px;font-size:17px;font-weight:700;color:var(--orange)">33–58 años</span>
+        <span style="background:var(--orangeBg);border:1px solid var(--orangeBorder);border-radius:20px;padding:8px 18px;font-size:17px;font-weight:700;color:var(--orange)">AMBA + Interior</span>
+      </div>
+      <div class="card fu d4" style="padding:20px;width:100%;border-left:5px solid var(--orange)">
+        <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:2px;margin-bottom:6px;font-family:'Poppins',sans-serif">CONTEXTO</p>
+        <p style="font-size:19px;color:var(--navy)">Día lleno de aula, familias y WhatsApps institucionales. Llega cansada con sensación de "me llevo el aula puesta". Decide de noche o en huecos.</p>
+      </div>
+    </div>
+    <div style="width:70%;padding:44px 56px;display:flex;flex-direction:column;justify-content:center;gap:18px">
+      <h2 class="fu" style="font-size:40px;margin-bottom:8px">"Necesita herramientas aplicables ya"</h2>
+      <div class="fu d1" style="display:flex;gap:18px">
+        <div class="card" style="flex:1;padding:24px;border-top:5px solid var(--orange)">
+          <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">NECESIDAD FUNCIONAL</p>
+          <p style="font-size:20px;color:var(--navy)">Desescalar conflictos (aula + familias), mejorar comunicación, tener recursos listos para aplicar.</p>
+        </div>
+        <div class="card" style="flex:1;padding:24px;border-top:5px solid var(--blue)">
+          <p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">NECESIDAD EMOCIONAL</p>
+          <p style="font-size:20px;color:var(--navy)">Bajar estrés y culpa ("no estoy llegando"). Recuperar sensación de control. No quedar expuesta ante familias.</p>
+        </div>
+      </div>
+      <div class="fu d2" style="display:flex;gap:18px">
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid #c0392b">
+          <p style="font-size:16px;color:#c0392b;font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">DOLORES</p>
+          <p style="font-size:20px;color:var(--navy)">Conflictos con estudiantes y roces con familias · Cansancio, frustración, sobrecarga · "Ya hice cursos similares y no me sirvió"</p>
+        </div>
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid var(--textLight)">
+          <p style="font-size:16px;color:var(--textLight);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">OBJECIONES</p>
+          <p style="font-size:20px;color:var(--navy)"><strong>Tiempo:</strong> "No llego, me va a quedar colgado" · <strong>Plata:</strong> salario ajustado · <strong>Beneficio:</strong> "No da puntaje, ¿para qué?"</p>
+        </div>
+      </div>
+      <div class="fu d3" style="display:flex;gap:18px">
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid var(--orange)">
+          <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">DISPARADORES DE COMPRA</p>
+          <p style="font-size:20px;color:var(--navy)">Reunión difícil con familias · Episodio de conflicto en el aula · Inicio de ciclo lectivo o evaluaciones</p>
+        </div>
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid var(--blue)">
+          <p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">QUÉ LA HACE DECIDIR</p>
+          <p style="font-size:20px;color:var(--navy)">Herramienta concreta (no promesa) · Flexibilidad real: "lo hago a mi ritmo" · Comunidad que reduce abandono</p>
+        </div>
+      </div>
+      <div class="card fu d4" style="border-left:6px solid var(--orange);padding:22px 28px">
+        <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">MENSAJE CLAVE</p>
+        <p style="font-size:24px;font-weight:600;font-style:italic;color:var(--navy)">"En el aula y en casa pasa lo mismo: no siempre discutimos por lo que pasó, sino por cómo lo interpretamos. ¿Querés una herramienta concreta?"</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 05b BUYER PERSONA: VALERIA (Salud) -->
+<div class="slide"><div class="si" style="background:var(--bg)">
+  <div class="ct" style="align-items:stretch">
+    <div style="width:30%;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 32px;gap:22px">
+      <div class="pill pill-b fu">Buyer Persona 2</div>
+      <img src="assets/persona_valeria.png" class="fu d1" style="width:280px;height:280px;border-radius:50%;object-fit:cover;box-shadow:var(--sh2);border:5px solid var(--bg)">
+      <h3 class="fu d2" style="text-align:center;font-size:30px;color:var(--navy);margin:0">Valeria</h3>
+      <p class="fu d2" style="text-align:center;font-size:22px;color:var(--blue);font-weight:700;margin:0">Profesional de la salud</p>
+      <div class="fu d3" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+        <span style="background:var(--blueBg);border:1px solid var(--blueBorder);border-radius:20px;padding:8px 18px;font-size:17px;font-weight:700;color:var(--blue)">30–55 años</span>
+        <span style="background:var(--blueBg);border:1px solid var(--blueBorder);border-radius:20px;padding:8px 18px;font-size:17px;font-weight:700;color:var(--blue)">Ciudades + AMBA</span>
+      </div>
+      <div class="card fu d4" style="padding:20px;width:100%;border-left:5px solid var(--blue)">
+        <p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:2px;margin-bottom:6px;font-family:'Poppins',sans-serif">CONTEXTO</p>
+        <p style="font-size:19px;color:var(--navy)">Trabaja por turnos con pacientes y familias. Alta carga emocional y complejidad con instituciones educativas. Vive malentendidos familia–escuela–profesional.</p>
+      </div>
+    </div>
+    <div style="width:70%;padding:44px 56px;display:flex;flex-direction:column;justify-content:center;gap:18px">
+      <h2 class="fu" style="font-size:40px;margin-bottom:8px">"Trabaja con familias y escuela, necesita herramientas serias"</h2>
+      <div class="fu d1" style="display:flex;gap:18px">
+        <div class="card" style="flex:1;padding:24px;border-top:5px solid var(--blue)">
+          <p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">NECESIDAD FUNCIONAL</p>
+          <p style="font-size:20px;color:var(--navy)">Mejorar intervenciones y entrevistas con familias. Bajar fricción entre actores. Sostener límites y acuerdos.</p>
+        </div>
+        <div class="card" style="flex:1;padding:24px;border-top:5px solid var(--orange)">
+          <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">NECESIDAD EMOCIONAL</p>
+          <p style="font-size:20px;color:var(--navy)">Protegerse del desgaste (burnout) y no "llevarse" los casos a casa. Sostener credibilidad con herramientas serias, no "frases lindas".</p>
+        </div>
+      </div>
+      <div class="fu d2" style="display:flex;gap:18px">
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid #c0392b">
+          <p style="font-size:16px;color:#c0392b;font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">DOLORES</p>
+          <p style="font-size:20px;color:var(--navy)">Reuniones tensas con padres/madres · Expectativas irreales y presión · Falta de lenguaje común con escuela/equipo interdisciplinario</p>
+        </div>
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid var(--textLight)">
+          <p style="font-size:16px;color:var(--textLight);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">OBJECIONES</p>
+          <p style="font-size:20px;color:var(--navy)"><strong>"¿Qué tan sólido es el contenido?"</strong> · <strong>"¿Es solo para docentes o entiende mi complejidad clínica?"</strong> · <strong>"Ya vi esto en otros cursos"</strong></p>
+        </div>
+      </div>
+      <div class="fu d3" style="display:flex;gap:18px">
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid var(--blue)">
+          <p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">QUÉ LA HACE DECIDIR</p>
+          <p style="font-size:20px;color:var(--navy)">Programa claro con módulos y evaluación estructurada (portafolio) · Aplicabilidad en trabajo y vida cotidiana · Acompañamiento real</p>
+        </div>
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid var(--orange)">
+          <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">DISPARADORES DE COMPRA</p>
+          <p style="font-size:20px;color:var(--navy)">Caso complejo con una familia · Reunión interdisciplinaria frustrante · Sensación de burnout creciente</p>
+        </div>
+      </div>
+      <div class="card fu d4" style="border-left:6px solid var(--blue);padding:22px 28px">
+        <p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">MENSAJE CLAVE</p>
+        <p style="font-size:24px;font-weight:600;font-style:italic;color:var(--navy)">"Si trabajás con familias y sentís que una misma situación se interpreta distinto y se arma tensión, te compartimos una herramienta para ordenar conversaciones sin escalar conflicto."</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 05c BUYER PERSONA: SOFÍA (Coaching) -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct" style="align-items:stretch">
+    <div style="width:30%;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 32px;gap:22px">
+      <div class="pill fu">Buyer Persona 3</div>
+      <img src="assets/persona_sofia.png" class="fu d1" style="width:280px;height:280px;border-radius:50%;object-fit:cover;box-shadow:var(--sh2);border:5px solid var(--white)">
+      <h3 class="fu d2" style="text-align:center;font-size:30px;color:var(--navy);margin:0">Sofía</h3>
+      <p class="fu d2" style="text-align:center;font-size:22px;color:var(--orange);font-weight:700;margin:0">Coach y facilitadora</p>
+      <div class="fu d3" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+        <span style="background:var(--orangeBg);border:1px solid var(--orangeBorder);border-radius:20px;padding:8px 18px;font-size:17px;font-weight:700;color:var(--orange)">28–48 años</span>
+        <span style="background:var(--orangeBg);border:1px solid var(--orangeBorder);border-radius:20px;padding:8px 18px;font-size:17px;font-weight:700;color:var(--orange)">Digital-first</span>
+      </div>
+      <div class="card fu d4" style="padding:20px;width:100%;border-left:5px solid var(--orange)">
+        <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:2px;margin-bottom:6px;font-family:'Poppins',sans-serif">CONTEXTO</p>
+        <p style="font-size:19px;color:var(--navy)">Consume contenido en redes, arma talleres. Tiene "síndrome de curso repetido": ya escuchó mucho de emociones. Compra cuando ve marco aplicable + comunidad + posicionamiento.</p>
+      </div>
+    </div>
+    <div style="width:70%;padding:44px 56px;display:flex;flex-direction:column;justify-content:center;gap:18px">
+      <h2 class="fu" style="font-size:40px;margin-bottom:8px">"Busca profundidad, estructura y diferenciación"</h2>
+      <div class="fu d1" style="display:flex;gap:18px">
+        <div class="card" style="flex:1;padding:24px;border-top:5px solid var(--orange)">
+          <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">NECESIDAD FUNCIONAL</p>
+          <p style="font-size:20px;color:var(--navy)">Sumar herramientas para sesiones y talleres. Generar recursos con estructura metodológica sólida.</p>
+        </div>
+        <div class="card" style="flex:1;padding:24px;border-top:5px solid var(--blue)">
+          <p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">NECESIDAD EMOCIONAL + SOCIAL</p>
+          <p style="font-size:20px;color:var(--navy)">Sentirse más segura y respaldada (lenguaje común, método). Diferenciarse con certificación + propuesta más seria que el mercado.</p>
+        </div>
+      </div>
+      <div class="fu d2" style="display:flex;gap:18px">
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid #c0392b">
+          <p style="font-size:16px;color:#c0392b;font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">DOLORES</p>
+          <p style="font-size:20px;color:var(--navy)">Mercado saturado de formaciones "light" · Dudas sobre retorno ("¿me aporta algo nuevo?") · Falta de estructura metodológica para enseñar o acompañar</p>
+        </div>
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid var(--textLight)">
+          <p style="font-size:16px;color:var(--textLight);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">OBJECIONES</p>
+          <p style="font-size:20px;color:var(--navy)"><strong>"Ya sé de esto"</strong> · <strong>"¿Es demasiado educativo y poco para mi práctica?"</strong> · <strong>"¿Me va a servir para gente adulta / equipos?"</strong></p>
+        </div>
+      </div>
+      <div class="fu d3" style="display:flex;gap:18px">
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid var(--orange)">
+          <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">QUÉ LA HACE DECIDIR</p>
+          <p style="font-size:20px;color:var(--navy)">Promesa de "enseñar, acompañar y vivir" · Teoría + práctica + comunidad · Certificación internacional que la posiciona</p>
+        </div>
+        <div class="card" style="flex:1;padding:24px;border-left:5px solid var(--blue)">
+          <p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">DISPARADORES DE COMPRA</p>
+          <p style="font-size:20px;color:var(--navy)">Cliente/grupo difícil que la deja sin herramientas · Ver a otra colega certificada · Necesidad de armar un taller con estructura</p>
+        </div>
+      </div>
+      <div class="card fu d4" style="border-left:6px solid var(--orange);padding:22px 28px">
+        <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif">MENSAJE CLAVE</p>
+        <p style="font-size:24px;font-weight:600;font-style:italic;color:var(--navy)">"Si ya hiciste cursos de emociones y querés algo más aplicable y con estructura, te mandamos el programa y un ejemplo de herramienta para usar en sesiones."</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 08 QUÉ LES PASA HOY -->
+<div class="slide"><div class="si" style="background:var(--bg)">
+  <div class="ct" style="align-items:center">
+    <div style="width:56%" class="col pad">
+      <div class="pill fu">Pain points</div>
+      <h2 class="fu d1">Qué les pasa hoy</h2>
+      <div style="margin-top:28px">
+        <div class="strip fu d2" style="font-size:30px">"Necesito herramientas para trabajar con otros sin desgastarme."</div>
+        <div class="strip fu d3" style="font-size:30px">"Terminamos discutiendo siempre."</div>
+        <div class="strip fu d4" style="font-size:30px">"Siento que el otro no me escucha."</div>
+        <div class="strip fu d5" style="font-size:30px">"Quiero acompañar mejor sin entrar en conflicto."</div>
+      </div>
+    </div>
+    <div style="width:44%;padding:50px;display:flex;flex-direction:column;gap:16px;justify-content:center">
+      <img src="assets/slide05_pain1.png" style="width:100%;height:280px;object-fit:cover;border-radius:var(--r);box-shadow:var(--sh2);" class="fu d2">
+      <img src="assets/slide05_pain2.png" style="width:100%;height:280px;object-fit:cover;border-radius:var(--r);box-shadow:var(--sh2);" class="fu d3">
+    </div>
+  </div>
+</div></div>
+
+<!-- 06 QUÉ OFRECE -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct center-all" style="padding:80px 140px">
+    <div class="pill fu">Propuesta de valor</div>
+    <h2 class="fu d1" style="font-size:50px;margin-bottom:52px">Qué ofrece Seres Inside</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;max-width:1200px;width:100%" class="fu d2">
+      <div class="card" style="text-align:center;padding:36px;border-left:6px solid var(--orange)"><h3 style="color:var(--navy);margin:0;font-size:24px">Formación flexible y online</h3></div>
+      <div class="card" style="text-align:center;padding:36px;border-left:6px solid var(--orange)"><h3 style="color:var(--navy);margin:0;font-size:24px">Aplicación inmediata en la vida y el trabajo</h3></div>
+      <div class="card" style="text-align:center;padding:36px;border-left:6px solid var(--orange)"><h3 style="color:var(--navy);margin:0;font-size:24px">Comunidad y acompañamiento</h3></div>
+      <div class="card" style="text-align:center;padding:36px;border-left:6px solid var(--orange)"><h3 style="color:var(--navy);margin:0;font-size:24px">Recorrido práctico, emocional y transformador</h3></div>
+      <div class="card" style="text-align:center;padding:36px;border-left:6px solid var(--orange)"><h3 style="color:var(--navy);margin:0;font-size:24px">Certificación internacional</h3></div>
+    </div>
+    <p class="fu d3" style="margin-top:52px;font-size:30px;font-weight:700;color:var(--navy);max-width:750px">No ofrecemos solo contenido: ofrecemos herramientas para <span class="accent">vivir</span> y <span class="accent">vincularse</span> mejor.</p>
+  </div>
+</div></div>
+
+<!-- 07 ARQUITECTURA -->
+<div class="slide"><div class="si" style="background:var(--bg)">
+  <div class="ct" style="flex-direction:column;justify-content:center;padding:60px 100px">
+    <div class="pill fu">Funnel</div>
+    <h2 class="fu d1" style="margin-bottom:40px">Arquitectura de la estrategia</h2>
+    <!-- Funnel visual completo -->
+    <div class="fu d2" style="display:flex;gap:28px;width:100%">
+      <!-- Col 1: Anuncios -->
+      <div style="flex:1;display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--orange);color:#fff;text-align:center;padding:14px;border-radius:var(--r);font-weight:800;font-size:20px;letter-spacing:1px;font-family:'Poppins',sans-serif">ANUNCIOS EN CIRCULACIÓN</div>
+        <div class="card" style="padding:18px 22px;font-size:20px;font-weight:600;border-left:4px solid var(--orange)">Reel profesor</div>
+        <div class="card" style="padding:18px 22px;font-size:20px;font-weight:600;border-left:4px solid var(--orange)">Reel UGC Sol</div>
+        <div class="card" style="padding:18px 22px;font-size:20px;font-weight:600;border-left:4px solid var(--orange)">Gráficas con fotos reales</div>
+        <div class="card" style="padding:18px 22px;font-size:20px;font-weight:600;border-left:4px solid var(--blue)">Reel testimonio Karina</div>
+        <div class="card" style="padding:18px 22px;font-size:20px;font-weight:600;border-left:4px solid var(--blue)">Gráfica diplomatura</div>
+      </div>
+      <!-- Flecha -->
+      <div style="display:flex;align-items:center;font-size:48px;color:var(--orange)">→</div>
+      <!-- Col 2: WhatsApp -->
+      <div style="flex:0.7;display:flex;flex-direction:column;justify-content:center;gap:14px">
+        <div class="card" style="text-align:center;padding:32px;border:3px solid var(--orange)">
+          <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:3px;margin-bottom:10px;font-family:'Poppins',sans-serif">WHATSAPP</p>
+          <p style="font-size:22px;color:var(--navy);font-weight:700">Primer contacto</p>
+          <p style="font-size:18px;color:var(--textMid);margin-top:8px">Mensaje automático + clasificación del lead</p>
+        </div>
+        <div style="text-align:center;font-size:32px;color:var(--orange)">↓</div>
+        <div style="display:flex;gap:12px">
+          <div class="card" style="flex:1;text-align:center;padding:18px;font-size:18px;font-weight:700;color:var(--navy)">Info conferencia</div>
+          <div class="card" style="flex:1;text-align:center;padding:18px;font-size:18px;font-weight:700;color:var(--navy)">Info diplomatura</div>
+        </div>
+      </div>
+      <!-- Flecha -->
+      <div style="display:flex;align-items:center;font-size:48px;color:var(--orange)">→</div>
+      <!-- Col 3: Conferencia + Diplomatura -->
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px">
+        <div class="card" style="padding:28px;border:3px solid var(--orangeL);text-align:center">
+          <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:3px;margin-bottom:8px;font-family:'Poppins',sans-serif">CONFERENCIA</p>
+          <p style="font-size:24px;font-weight:700;color:var(--navy)">Puerta de entrada</p>
+          <p style="font-size:18px;color:var(--textMid);margin-top:6px">Genera confianza y primer vínculo con la marca</p>
+        </div>
+        <div style="text-align:center;font-size:28px;color:var(--orange);font-weight:700">↓ convierte en</div>
+        <div class="card" style="padding:28px;background:var(--orangeBg);border:3px solid var(--orange);text-align:center">
+          <p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:3px;margin-bottom:8px;font-family:'Poppins',sans-serif">DIPLOMATURA</p>
+          <p style="font-size:24px;font-weight:700;color:var(--navy)">Profundización y conversión</p>
+          <p style="font-size:18px;color:var(--textMid);margin-top:6px">Formación completa con certificación internacional</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 08 WHATSAPP COMO PUNTO CRÍTICO -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct" style="align-items:center">
+    <div style="width:42%;padding:50px;display:flex;align-items:center;justify-content:center">
+      <img src="assets/slide15_whatsapp.png" class="fu" style="width:380px;border-radius:var(--r);box-shadow:var(--sh2)">
+    </div>
+    <div style="width:58%" class="col pad">
+      <div class="pill fu">Punto crítico</div>
+      <h2 class="fu d1">WhatsApp como punto crítico</h2>
+      <p class="fu d2" style="font-size:26px;max-width:620px;margin-top:16px">Hoy el <strong class="accent">62,86% no responde</strong> (521 de 829). La conversión no depende solo del anuncio: depende de la velocidad, claridad y orden del primer contacto.</p>
+      <div class="fu d3" style="margin-top:28px">
+        <div style="display:flex;align-items:center;gap:18px;margin-bottom:18px">
+          <div style="width:14px;height:14px;border-radius:50%;background:var(--orange)"></div>
+          <p style="font-size:24px;color:var(--navy);font-weight:700">Clasificación simple del lead</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:18px;margin-bottom:18px">
+          <div style="width:14px;height:14px;border-radius:50%;background:var(--orange)"></div>
+          <p style="font-size:24px;color:var(--navy);font-weight:700">Respuesta rápida y ordenada</p>
+        </div>
+      </div>
+      <div class="card fu d4" style="border-left:6px solid var(--blue);padding:20px 28px;margin-top:16px">
+        <p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:2px;margin-bottom:6px;font-family:'Poppins',sans-serif">SUGERENCIA</p>
+        <p style="font-size:22px;color:var(--navy);font-weight:600">Implementar un <strong class="accent">mensaje automático inmediato</strong> para "congelar" el interés del lead mientras se gestiona el contacto humano.</p>
+      </div>
+      <p class="fu d5" style="margin-top:32px;font-size:32px;font-weight:900;color:var(--orange)">Mejor seguimiento = mejor conversión.</p>
+    </div>
+  </div>
+</div></div>
+
+<!-- 09 CAMPAÑA 1 -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct" style="align-items:center">
+    <div style="width:52%" class="col pad">
+      <div class="pill fu">Campaña 1</div>
+      <h2 class="fu d1">Ciclo de Conferencias</h2>
+      <div class="card fu d2" style="margin-top:20px;border-left:6px solid var(--orange)">
+        <h3 style="color:var(--orange);font-size:28px">Objetivo</h3>
+        <p style="font-size:26px">Generar interés, conversaciones y primer contacto con la marca desde una problemática cotidiana y reconocible.</p>
+      </div>
+      <div class="fu d3" style="margin-top:28px;display:flex;gap:48px">
+        <div><p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:3px;font-family:'Poppins',sans-serif">TONO</p><p style="font-size:24px;color:var(--navy);margin-top:6px">Humano, cercano, aplicable</p></div>
+        <div><p style="font-size:16px;color:var(--orange);font-weight:800;letter-spacing:3px;font-family:'Poppins',sans-serif">MENSAJE EJE</p><p style="font-size:24px;color:var(--navy);margin-top:6px">Conflicto, interpretación, vínculo</p></div>
+      </div>
+    </div>
+    <div style="width:48%;padding:60px" class="col">
+      <div class="fu d4" style="position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh2)">
+        <img src="assets/slide08_conference.png" style="width:100%;height:400px;object-fit:cover;display:block">
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(31,41,51,.85) 0%,rgba(31,41,51,.3) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:40px">
+          <p style="font-size:36px;font-weight:500;font-style:italic;color:#fff;line-height:1.35">¿Te pasa que terminan discutiendo siempre?</p>
+          <p style="font-size:18px;color:rgba(255,255,255,.5);margin-top:12px">Entrada emocional → conversación por WhatsApp</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 10 ACTIVOS CONFERENCIAS -->
+<div class="slide"><div class="si" style="background:var(--bg)">
+  <div class="ct" style="flex-direction:column;justify-content:center;padding:70px 100px">
+    <div class="pill fu">Contenido</div>
+    <h2 class="fu d1">Activos disponibles · Conferencias</h2>
+    <div class="cgrid fu d2" style="margin-top:36px">
+      <div class="cc"><div class="ib" style="background:var(--orangeBg);color:var(--orange);border:1.5px solid var(--orangeBorder)">▶</div><span>Reel del profesor explicando de qué va el encuentro</span></div>
+      <div class="cc"><div class="ib" style="background:var(--orangeBg);color:var(--orange);border:1.5px solid var(--orangeBorder)">▶</div><span>Reel UGC con actriz explicando el ciclo y la invitación</span></div>
+      <div class="cc"><div class="ib" style="background:var(--orangeBg);color:var(--orange);border:1.5px solid var(--orangeBorder)">🖼</div><span>Gráfica con fotos reales</span></div>
+      <div class="cc"><div class="ib" style="background:var(--orangeBg);color:var(--orange);border:1.5px solid var(--orangeBorder)">🖼</div><span>Gráfica simple con fecha, valor y CTA</span></div>
+      <div class="cc"><div class="ib" style="background:var(--orangeBg);color:var(--orange);border:1.5px solid var(--orangeBorder)">▶</div><span>Reel de gráfica animada / movimiento</span></div>
+    </div>
+    <p class="sm fu d3" style="margin-top:28px">Plan de contenidos realista según el material disponible hoy.</p>
+  </div>
+</div></div>
+
+<!-- 10 CAMPAÑA 2 -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct" style="align-items:center">
+    <div style="width:52%" class="col pad">
+      <div class="pill pill-b fu">Campaña 2</div>
+      <h2 class="fu d1">Diplomatura</h2>
+      <div class="card fu d2" style="margin-top:20px;border-left:6px solid var(--blue)">
+        <h3 style="color:var(--blue);font-size:28px">Objetivo</h3>
+        <p style="font-size:26px">Convertir el interés en una formación más profunda, reforzando flexibilidad, practicidad y transformación sostenida.</p>
+      </div>
+      <div class="fu d3" style="margin-top:28px;display:flex;gap:48px">
+        <div><p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:3px;font-family:'Poppins',sans-serif">TONO</p><p style="font-size:24px;color:var(--navy);margin-top:6px">Sólido, explicativo, orientado a valor</p></div>
+        <div><p style="font-size:16px;color:var(--blue);font-weight:800;letter-spacing:3px;font-family:'Poppins',sans-serif">MENSAJE EJE</p><p style="font-size:24px;color:var(--navy);margin-top:6px">Formación flexible, útil y aplicable</p></div>
+      </div>
+    </div>
+    <div style="width:48%;padding:60px" class="col">
+      <div class="card fu d4" style="text-align:center;border:3px solid var(--blue);padding:56px 44px">
+        <p style="font-size:18px;color:var(--blue);font-weight:800;letter-spacing:4px;margin-bottom:18px;font-family:'Poppins',sans-serif">PROMESA</p>
+        <p style="font-size:34px;font-weight:700;color:var(--navy);line-height:1.35">Una formación que transforma tu manera de enseñar, acompañar y vivir.</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 11 ACTIVOS DIPLOMATURA -->
+<div class="slide"><div class="si" style="background:var(--bg)">
+  <div class="ct" style="flex-direction:column;justify-content:center;padding:70px 100px">
+    <div class="pill pill-b fu">Contenido</div>
+    <h2 class="fu d1">Activos disponibles · Diplomatura</h2>
+    <div class="cgrid fu d2" style="margin-top:36px">
+      <div class="cc"><div class="ib" style="background:var(--blueBg);color:var(--blue);border:1.5px solid var(--blueBorder)">▶</div><span>Reel testimonio de Karina durante una clase</span></div>
+      <div class="cc"><div class="ib" style="background:var(--blueBg);color:var(--blue);border:1.5px solid var(--blueBorder)">▶</div><span>Reel UGC de Sol explicando módulos y utilidad</span></div>
+      <div class="cc"><div class="ib" style="background:var(--blueBg);color:var(--blue);border:1.5px solid var(--blueBorder)">▶</div><span>Reel gráfico en movimiento · versión 1</span></div>
+      <div class="cc"><div class="ib" style="background:var(--blueBg);color:var(--blue);border:1.5px solid var(--blueBorder)">▶</div><span>Reel gráfico en movimiento · versión 2</span></div>
+      <div class="cc"><div class="ib" style="background:var(--blueBg);color:var(--blue);border:1.5px solid var(--blueBorder)">🖼</div><span>Gráficas simples</span></div>
+      <div class="cc"><div class="ib" style="background:var(--blueBg);color:var(--blue);border:1.5px solid var(--blueBorder)">🖼</div><span>Gráfica institucional / federal · expansión geográfica</span></div>
+    </div>
+    <p class="sm fu d3" style="margin-top:28px">Activos que combinan prueba social, explicación y recordación.</p>
+  </div>
+</div></div>
+
+<!-- 12a DISTRIBUCIÓN GEOGRÁFICA ACTUAL -->
+<div class="slide"><div class="si" style="background:var(--bg)">
+  <div class="ct" style="align-items:stretch">
+    <div style="width:50%" class="col pad">
+      <div class="pill fu">Datos actuales</div>
+      <h2 class="fu d1">De dónde vienen los contactos hoy</h2>
+      <p class="fu d2" style="font-size:22px;margin-bottom:28px">El <strong style="color:var(--orange)">Top 10 de provincias concentra el 70,69%</strong> de la base. AMBA domina con ~36% de los contactos.</p>
+      <!-- Horizontal bar chart -->
+      <div class="fu d3" style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:12px"><span style="font-size:16px;font-weight:600;color:var(--navy);width:160px;text-align:right">AMBA</span><div style="flex:1;height:28px;background:var(--white);border-radius:14px;overflow:hidden"><div style="width:35.82%;height:100%;background:var(--orange);border-radius:14px;display:flex;align-items:center;padding-left:12px"><span style="font-size:14px;font-weight:800;color:#fff">35,82%</span></div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="font-size:16px;font-weight:600;color:var(--navy);width:160px;text-align:right">Córdoba</span><div style="flex:1;height:28px;background:var(--white);border-radius:14px;overflow:hidden"><div style="width:7.24%;height:100%;background:var(--blue);border-radius:14px;min-width:60px;display:flex;align-items:center;padding-left:12px"><span style="font-size:14px;font-weight:800;color:#fff">7,24%</span></div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="font-size:16px;font-weight:600;color:var(--navy);width:160px;text-align:right">Mendoza</span><div style="flex:1;height:28px;background:var(--white);border-radius:14px;overflow:hidden"><div style="width:5.79%;height:100%;background:var(--blue);border-radius:14px;min-width:60px;display:flex;align-items:center;padding-left:12px"><span style="font-size:14px;font-weight:800;color:#fff">5,79%</span></div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="font-size:16px;font-weight:600;color:var(--navy);width:160px;text-align:right">Jujuy</span><div style="flex:1;height:28px;background:var(--white);border-radius:14px;overflow:hidden"><div style="width:5.07%;height:100%;background:var(--blueL);border-radius:14px;min-width:60px;display:flex;align-items:center;padding-left:12px"><span style="font-size:14px;font-weight:800;color:#fff">5,07%</span></div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="font-size:16px;font-weight:600;color:var(--navy);width:160px;text-align:right">Santa Fe</span><div style="flex:1;height:28px;background:var(--white);border-radius:14px;overflow:hidden"><div style="width:4.95%;height:100%;background:var(--blueL);border-radius:14px;min-width:60px;display:flex;align-items:center;padding-left:12px"><span style="font-size:14px;font-weight:800;color:#fff">4,95%</span></div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="font-size:16px;font-weight:600;color:var(--navy);width:160px;text-align:right">Neuquén</span><div style="flex:1;height:28px;background:var(--white);border-radius:14px;overflow:hidden"><div style="width:4.10%;height:100%;background:var(--blueL);border-radius:14px;min-width:60px;display:flex;align-items:center;padding-left:12px"><span style="font-size:14px;font-weight:800;color:#fff">4,10%</span></div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="font-size:16px;font-weight:600;color:var(--navy);width:160px;text-align:right">Salta</span><div style="flex:1;height:28px;background:var(--white);border-radius:14px;overflow:hidden"><div style="width:3.98%;height:100%;background:var(--blueL);border-radius:14px;min-width:55px;display:flex;align-items:center;padding-left:12px"><span style="font-size:14px;font-weight:800;color:#fff">3,98%</span></div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="font-size:16px;font-weight:600;color:var(--navy);width:160px;text-align:right">Entre Ríos</span><div style="flex:1;height:28px;background:var(--white);border-radius:14px;overflow:hidden"><div style="width:3.74%;height:100%;background:var(--blueL);border-radius:14px;min-width:55px;display:flex;align-items:center;padding-left:12px"><span style="font-size:14px;font-weight:800;color:#fff">3,74%</span></div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="font-size:16px;font-weight:600;color:var(--textLight);width:160px;text-align:right">Resto del país</span><div style="flex:1;height:28px;background:var(--white);border-radius:14px;overflow:hidden"><div style="width:29.31%;height:100%;background:var(--bg);border:2px solid rgba(0,0,0,.08);border-radius:14px;display:flex;align-items:center;padding-left:12px"><span style="font-size:14px;font-weight:700;color:var(--textLight)">29,31%</span></div></div></div>
+      </div>
+    </div>
+    <div style="width:50%;padding:44px 50px;display:flex;flex-direction:column;justify-content:center;gap:20px">
+      <div class="card fu d4" style="border-left:6px solid var(--orange);padding:28px 32px">
+        <h3 style="color:var(--orange);font-size:24px">Hallazgo clave</h3>
+        <p style="font-size:22px">Córdoba y Santa Fe muestran <strong class="accent">mejor conversión observada</strong> en la base actual. Son las zonas con mayor potencial de escala.</p>
+      </div>
+      <div class="card fu d5" style="border-left:6px solid var(--blue);padding:28px 32px">
+        <h3 style="color:var(--blue);font-size:24px">Oportunidad de cierre</h3>
+        <p style="font-size:22px">Neuquén tiene <strong class="blue">alta proporción en "Seguimiento"</strong> pero sin conversiones registradas. Indica oportunidad de cierre, no mala audiencia.</p>
+      </div>
+      <div class="card fu d6" style="border-left:6px solid var(--navy);padding:28px 32px">
+        <h3 style="color:var(--navy);font-size:24px">Norte: zona con potencial</h3>
+        <p style="font-size:22px">Jujuy y Salta tienen volumen de contactos. Con mejor seguimiento y mensaje ajustado, <strong>pueden activarse como zona de crecimiento</strong>.</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 12b EXPANSIÓN GEOGRÁFICA -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct" style="flex-direction:column;justify-content:center;padding:60px 100px">
+    <div class="pill fu">Segmentación</div>
+    <h2 class="fu d1" style="margin-bottom:40px">Expansión geográfica</h2>
+    <div style="display:flex;gap:28px" class="fu d2">
+      <div class="geo-card" style="box-shadow:var(--sh2)">
+        <img src="assets/geo_centro.png">
+        <div class="gov"></div>
+        <div class="gt">
+          <h3 style="color:var(--orangeL);font-size:28px">Centro</h3>
+          <p><strong style="color:#fff;font-size:24px">Córdoba · Santa Fe · Mendoza</strong></p>
+          <p style="margin-top:8px;font-size:20px">Buen volumen y mejor base para prueba.</p>
+        </div>
+      </div>
+      <div class="geo-card" style="box-shadow:var(--sh2)">
+        <img src="assets/geo_norte.png">
+        <div class="gov"></div>
+        <div class="gt">
+          <h3 style="color:var(--orangeL);font-size:28px">Norte</h3>
+          <p><strong style="color:#fff;font-size:24px">Jujuy · Salta · Tucumán</strong></p>
+          <p style="margin-top:8px;font-size:20px">Ya aparecen en la base y pueden crecer.</p>
+        </div>
+      </div>
+      <div class="geo-card" style="box-shadow:var(--sh2)">
+        <img src="assets/geo_sur.png">
+        <div class="gov"></div>
+        <div class="gt">
+          <h3 style="color:var(--blueL);font-size:28px">Sur</h3>
+          <p><strong style="color:#fff;font-size:24px">Neuquén · Río Negro · Chubut</strong></p>
+          <p style="margin-top:8px;font-size:20px">Menor saturación y oportunidad de expansión.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 15 OBJETIVOS -->
+<div class="slide"><div class="si" style="background:var(--bg)">
+  <div class="ct center-all" style="padding:80px">
+    <div class="pill fu">Metas</div>
+    <h2 class="fu d1">Objetivos realistas</h2>
+    <div class="mrow fu d2" style="margin-top:52px">
+      <div class="mc"><p class="mv">45k–70k</p><p class="ml">personas alcanzadas</p></div>
+      <div class="mc"><p class="mv">80–100</p><p class="ml">conversaciones estimadas</p><p style="font-size:15px;color:var(--orange);font-weight:700;margin-top:8px">~3 a 4 por día</p></div>
+      <div class="mc"><p class="mv">−20%</p><p class="ml">reducción pérdida de leads</p></div>
+      <div class="mc"><p class="mv">6–10</p><p class="ml">ventas totales estimadas</p><p style="font-size:15px;color:var(--orange);font-weight:700;margin-top:8px">~7% a 10% de las conversaciones</p></div>
+    </div>
+    <p class="sm fu d3" style="margin-top:40px">Objetivos adaptados al tiempo disponible, el material actual y el presupuesto real.</p>
+  </div>
+</div></div>
+
+<!-- 16 PRESUPUESTO -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct" style="align-items:center">
+    <div style="width:50%" class="col pad">
+      <div class="pill fu">Planificación</div>
+      <h2 class="fu d1">Presupuesto y timing</h2>
+      <div class="tl fu d2" style="margin-top:36px">
+        <div class="ti"><p>6 abril — Lanzamiento de pauta</p></div>
+        <div class="ti"><p>Semana previa — Producción y ajuste de piezas</p></div>
+        <div class="ti"><p>Conferencia — Empuje fuerte de captación</p></div>
+        <div class="ti"><p>Post evento — Continuidad en diplomatura</p></div>
+      </div>
+    </div>
+    <div style="width:50%;padding:60px" class="col">
+      <div class="card fu d3" style="border-left:6px solid var(--orange)">
+        <p class="bt">$300.000 – $350.000</p>
+        <div class="brow"><span>Duración total</span><strong>~25 días (6 al 30 de abril)</strong></div>
+        <div class="brow"><span>Promedio diario</span><strong>$12.000 – $14.000 / día</strong></div>
+        <div class="brow"><span>Fase 1 (6–19 abril)</span><strong>70% conferencia / 30% diplomatura</strong></div>
+        <div class="brow"><span>Fase 2 (post conferencia)</span><strong>Continuidad de diplomatura</strong></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 17 CIERRE -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct center-all">
+    <div style="max-width:900px">
+      <img src="assets/logo-azul.svg" class="fu" style="margin-bottom:48px;height:90px">
+      <h1 class="fu d1" style="font-size:52px;line-height:1.2;margin-bottom:30px;color:var(--navy)">La propuesta no busca solo vender una formación.</h1>
+      <p class="fu d2" style="font-size:30px;color:var(--textMid);margin-bottom:60px;line-height:1.5">Busca ordenar un sistema de adquisición para atraer mejor, convertir mejor y crecer con más coherencia.</p>
+      <div class="fu d3" style="display:flex;flex-direction:column;align-items:center;gap:18px">
+        <div style="width:80px;height:4px;background:var(--orange);border-radius:4px"></div>
+        <p style="font-size:22px;font-weight:800;color:var(--orange);letter-spacing:5px;font-family:'Poppins',sans-serif">SERES INSIDE</p>
+        <p style="font-size:18px;color:var(--textLight);letter-spacing:3px">emociones que inspiran acción</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+</div>
+
+<script>
+(function(){
+  const S=document.querySelectorAll('.slide'),T=S.length,C=document.getElementById('counter'),P=document.getElementById('progress');
+  let c=0;
+  function go(n){if(n<0||n>=T)return;S[c].classList.remove('active');c=n;S[c].classList.add('active');C.textContent=(c+1)+' / '+T;P.style.width=((c+1)/T*100)+'%';}
+  function scale(){const s=Math.min(innerWidth/1920,innerHeight/1080);document.querySelectorAll('.si').forEach(e=>e.style.transform='scale('+s+')');}
+  scale();addEventListener('resize',scale);
+  addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();go(c+1);}
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();go(c-1);}
+    if(e.key==='Home')go(0);if(e.key==='End')go(T-1);
+    if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+  });
+  document.getElementById('fsBtn').addEventListener('click',function(e){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();});
+  let tx=0;addEventListener('touchstart',function(e){tx=e.touches[0].clientX;});
+  addEventListener('touchend',function(e){const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50){d<0?go(c+1):go(c-1);}});
+})();
+</script>
+</body>
+</html>

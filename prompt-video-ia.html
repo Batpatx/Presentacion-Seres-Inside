@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>Prompt de Video IA — Guía de Producción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#1f2933;--navy2:#18448f;
+  --orange:#e47b02;--orangeL:#ed8f0c;--orangeBg:rgba(228,123,2,.07);--orangeBorder:rgba(228,123,2,.2);
+  --blue:#0699d2;--blueL:#3ab8ef;--blueBg:rgba(6,153,210,.06);--blueBorder:rgba(6,153,210,.15);
+  --bg:#f3f4f7;--bgAlt:#f9f9fb;--white:#ffffff;
+  --text:#1f2933;--textMid:#4e5d6c;--textLight:#7b8794;
+  --r:20px;--rpill:50px;
+  --sh:0 0 14px rgba(0,0,0,.07);--sh2:0 8px 30px rgba(0,0,0,.08);
+  --green:#27ae60;--greenBg:rgba(39,174,96,.07);--greenBorder:rgba(39,174,96,.2);
+  --red:#c0392b;--redBg:rgba(192,57,43,.07);--redBorder:rgba(192,57,43,.2);
+  --purple:#8e44ad;--purpleBg:rgba(142,68,173,.07);--purpleBorder:rgba(142,68,173,.2);
+}
+html,body{font-family:'Montserrat',system-ui,sans-serif;background:#e8eaed;color:var(--text);overflow:hidden;height:100%;width:100%;-webkit-font-smoothing:antialiased;}
+
+.deck{position:relative;width:100vw;height:100vh;}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .55s ease;}
+.slide.active{opacity:1;pointer-events:auto;}
+.si{width:1920px;height:1080px;transform-origin:center center;position:relative;overflow:hidden;}
+
+.si .ct{position:relative;z-index:2;width:100%;height:100%;display:flex;}
+
+.pill{display:inline-block;background:var(--purpleBg);color:var(--purple);border:1.5px solid var(--purpleBorder);border-radius:var(--rpill);padding:10px 26px;font-size:16px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;font-family:'Poppins',sans-serif;}
+.pill-b{background:var(--blueBg);color:var(--blue);border-color:var(--blueBorder);}
+.pill-o{background:var(--orangeBg);color:var(--orange);border-color:var(--orangeBorder);}
+.pill-g{background:var(--greenBg);color:var(--green);border-color:var(--greenBorder);}
+
+h1{font-size:68px;font-weight:900;line-height:1.06;color:var(--navy);margin-bottom:24px;letter-spacing:-.03em;}
+h2{font-size:54px;font-weight:800;line-height:1.1;color:var(--navy);margin-bottom:22px;letter-spacing:-.02em;}
+h3{font-size:30px;font-weight:700;line-height:1.25;color:var(--navy);margin-bottom:12px;}
+p{font-size:26px;font-weight:500;line-height:1.6;color:var(--textMid);}
+.sm{font-size:20px;color:var(--textLight);font-weight:500;}
+
+.dk h1,.dk h2,.dk h3{color:#fff;} .dk p{color:rgba(255,255,255,.8);} .dk .sm{color:rgba(255,255,255,.5);}
+.accent{color:var(--orange);} .blue{color:var(--blue);} .purple{color:var(--purple);}
+
+.col{display:flex;flex-direction:column;justify-content:center;}
+.pad{padding:80px 100px;}
+.center-all{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;width:100%;}
+
+.card{background:var(--white);border-radius:var(--r);padding:36px;box-shadow:var(--sh2);}
+
+.strip{padding:24px 34px;margin-bottom:16px;font-size:26px;font-weight:600;color:var(--navy);border-left:5px solid var(--purple);border-radius:0 var(--r) var(--r) 0;background:linear-gradient(90deg,rgba(142,68,173,.06),transparent);}
+.strip-o{border-left-color:var(--orange);background:linear-gradient(90deg,rgba(228,123,2,.06),transparent);}
+.strip-b{border-left-color:var(--blue);background:linear-gradient(90deg,rgba(6,153,210,.06),transparent);}
+.strip-g{border-left-color:var(--green);background:linear-gradient(90deg,rgba(39,174,96,.06),transparent);}
+
+.mrow{display:flex;gap:24px;justify-content:center;}
+.mc{background:var(--white);border-radius:var(--r);padding:38px 28px;text-align:center;flex:1;max-width:300px;box-shadow:var(--sh2);border-top:5px solid var(--purple);}
+
+.code-block{background:var(--navy);border-radius:var(--r);padding:40px 44px;font-family:'Fira Code','Courier New',monospace;font-size:20px;line-height:1.8;color:rgba(255,255,255,.85);box-shadow:var(--sh2);position:relative;overflow:hidden;}
+.code-block::before{content:'PROMPT STRUCTURE';position:absolute;top:16px;right:24px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.25);text-transform:uppercase;}
+.code-key{color:#f0c674;}
+.code-val{color:#81a2be;}
+.code-bracket{color:rgba(255,255,255,.4);}
+
+.tip-box{background:var(--purpleBg);border:2px solid var(--purpleBorder);border-radius:var(--r);padding:24px 30px;margin-top:20px;}
+.tip-box p{font-size:22px;color:var(--navy);font-weight:600;}
+.tip-label{font-size:14px;color:var(--purple);font-weight:800;letter-spacing:2px;margin-bottom:8px;font-family:'Poppins',sans-serif;}
+
+.dbox{border-radius:var(--r);padding:32px 36px;flex:1;}
+.dbox-yes{background:var(--greenBg);border:2px solid var(--greenBorder);}
+.dbox-no{background:var(--redBg);border:2px solid var(--redBorder);}
+.dbox h3{font-size:24px;margin-bottom:16px;}
+.dbox li{font-size:22px;font-weight:600;color:var(--navy);line-height:1.8;list-style:none;padding-left:24px;position:relative;}
+.dbox li::before{content:'';position:absolute;left:0;top:13px;width:10px;height:10px;border-radius:50%;}
+.dbox-yes li::before{background:var(--green);}
+.dbox-no li::before{background:var(--red);}
+
+.flow{display:flex;align-items:center;gap:0;justify-content:center;margin-top:40px;}
+.fstep{padding:30px 44px;border-radius:var(--r);font-weight:800;font-size:24px;text-align:center;min-width:220px;background:var(--white);color:var(--navy);box-shadow:var(--sh2);}
+.fstep-active{background:var(--navy);color:#fff;}
+.farrow{font-size:40px;margin:0 16px;color:var(--purple);}
+
+.pbar{position:fixed;top:0;left:0;height:5px;background:linear-gradient(90deg,var(--purple),var(--blue));z-index:200;transition:width .4s ease;}
+.cnt{position:fixed;bottom:26px;right:38px;font-size:15px;font-weight:700;color:var(--textLight);z-index:100;background:rgba(255,255,255,.85);padding:8px 20px;border-radius:var(--rpill);backdrop-filter:blur(8px);box-shadow:var(--sh);font-family:'Poppins',sans-serif;}
+.fbtn{position:fixed;bottom:26px;left:38px;background:rgba(255,255,255,.85);color:var(--textLight);border:none;padding:8px 20px;border-radius:var(--rpill);font-size:13px;font-weight:700;cursor:pointer;z-index:100;backdrop-filter:blur(8px);box-shadow:var(--sh);font-family:'Poppins',sans-serif;letter-spacing:1px;text-transform:uppercase;}
+.fbtn:hover{color:var(--purple);}
+
+.slide.active .fu{animation:fu .6s cubic-bezier(.16,1,.3,1) both;}
+.slide.active .d1{animation-delay:.1s;}.slide.active .d2{animation-delay:.2s;}
+.slide.active .d3{animation-delay:.3s;}.slide.active .d4{animation-delay:.4s;}
+.slide.active .d5{animation-delay:.5s;}.slide.active .d6{animation-delay:.6s;}
+@keyframes fu{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+.logo{height:56px;width:auto;}
+
+/* Bullet grid */
+.bullet-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.bullet-item{background:var(--white);border-radius:var(--r);padding:26px 30px;box-shadow:var(--sh);display:flex;align-items:flex-start;gap:16px;}
+.bullet-icon{flex-shrink:0;width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;}
+.bullet-item p{font-size:22px;font-weight:600;color:var(--navy);line-height:1.4;}
+.bullet-item .sm{font-size:17px;color:var(--textLight);margin-top:6px;font-weight:500;}
+
+/* Audio section cards */
+.audio-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.audio-card{background:var(--white);border-radius:var(--r);padding:36px;box-shadow:var(--sh2);}
+.audio-card h3{font-size:28px;margin-bottom:18px;}
+.audio-card li{font-size:22px;font-weight:600;color:var(--navy);line-height:1.9;list-style:none;padding-left:24px;position:relative;}
+.audio-card li::before{content:'';position:absolute;left:0;top:13px;width:10px;height:10px;border-radius:50%;background:var(--purple);}
+.audio-card-b li::before{background:var(--blue);}
+</style>
+</head>
+<body>
+
+<div class="pbar" id="progress"></div>
+<div class="cnt" id="counter">1 / 4</div>
+<button class="fbtn" id="fsBtn">F &middot; Fullscreen</button>
+
+<div class="deck" id="deck">
+
+<!-- ============ 01 ESTRUCTURA DEL PROMPT ============ -->
+<div class="slide active"><div class="si" style="background:var(--bg)">
+  <div class="ct" style="align-items:stretch">
+    <div style="width:50%" class="col pad">
+      <div class="pill fu">Slide 1 &middot; Estructura</div>
+      <h2 class="fu d1">Estructura del<br><span class="purple">prompt de video</span></h2>
+      <p class="fu d2" style="font-size:24px;margin-bottom:28px;max-width:560px">Base JSON que define c&aacute;mara, sujeto, acci&oacute;n, entorno, iluminaci&oacute;n y audio para generar videos con apariencia UGC real.</p>
+      <div class="tip-box fu d3">
+        <p class="tip-label">CONSEJO PRO</p>
+        <p>Usar imagen generada (Higgs / IA) como <strong class="purple">start frame</strong> para mejorar consistencia visual del video.</p>
+      </div>
+    </div>
+    <div style="width:50%;padding:60px 60px 60px 20px" class="col">
+      <div class="code-block fu d2">
+        <span class="code-bracket">{</span><br>
+        &nbsp;&nbsp;<span class="code-key">"camera"</span>: <span class="code-val">"selfie, 9:16, handheld"</span>,<br>
+        &nbsp;&nbsp;<span class="code-key">"subject"</span>: <span class="code-val">"persona realista, estilo influencer"</span>,<br>
+        &nbsp;&nbsp;<span class="code-key">"action"</span>: <span class="code-val">"habla natural a c&aacute;mara"</span>,<br>
+        &nbsp;&nbsp;<span class="code-key">"environment"</span>: <span class="code-val">"contexto real (coche)"</span>,<br>
+        &nbsp;&nbsp;<span class="code-key">"lighting"</span>: <span class="code-val">"luz natural"</span>,<br>
+        &nbsp;&nbsp;<span class="code-key">"audio"</span>: <span class="code-val">"voz clara, tono real"</span><br>
+        <span class="code-bracket">}</span>
+      </div>
+      <div style="display:flex;gap:14px;margin-top:24px">
+        <div class="card fu d3" style="flex:1;padding:20px 24px;text-align:center;border-top:4px solid var(--purple)">
+          <p style="font-size:16px;font-weight:800;color:var(--purple);margin-bottom:4px">FORMATO</p>
+          <p style="font-size:20px;color:var(--navy);font-weight:700">9:16 vertical</p>
+        </div>
+        <div class="card fu d4" style="flex:1;padding:20px 24px;text-align:center;border-top:4px solid var(--orange)">
+          <p style="font-size:16px;font-weight:800;color:var(--orange);margin-bottom:4px">ESTILO</p>
+          <p style="font-size:20px;color:var(--navy);font-weight:700">UGC / Selfie</p>
+        </div>
+        <div class="card fu d5" style="flex:1;padding:20px 24px;text-align:center;border-top:4px solid var(--blue)">
+          <p style="font-size:16px;font-weight:800;color:var(--blue);margin-bottom:4px">C&Aacute;MARA</p>
+          <p style="font-size:20px;color:var(--navy);font-weight:700">Handheld</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ============ 02 CLAVES DEL PROMPT ============ -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct" style="align-items:stretch">
+    <div style="width:45%" class="col pad">
+      <div class="pill fu">Slide 2 &middot; Claves</div>
+      <h2 class="fu d1">Lo que realmente<br><span class="accent">hace la diferencia</span></h2>
+      <p class="fu d2" style="font-size:24px;margin-bottom:30px;max-width:500px">El prompt no es solo texto: es direcci&oacute;n de arte para que la IA genere algo que el p&uacute;blico no distinga de contenido org&aacute;nico.</p>
+      <div class="card fu d3" style="border-left:6px solid var(--red);padding:24px 28px">
+        <p style="font-size:16px;color:var(--red);font-weight:800;letter-spacing:2px;margin-bottom:6px;font-family:'Poppins',sans-serif">REGLA DE ORO</p>
+        <p style="font-size:24px;color:var(--navy);font-weight:700">Si parece publicidad &rarr; <strong style="color:var(--red)">baja rendimiento</strong></p>
+      </div>
+    </div>
+    <div style="width:55%;padding:60px 60px 60px 20px" class="col">
+      <div class="bullet-grid">
+        <div class="bullet-item fu d1">
+          <div class="bullet-icon" style="background:var(--purple)">01</div>
+          <div>
+            <p>Movimiento natural</p>
+            <p class="sm">NO est&aacute;tico. Peque&ntilde;os temblores, giros de cabeza, manos que se mueven.</p>
+          </div>
+        </div>
+        <div class="bullet-item fu d2">
+          <div class="bullet-icon" style="background:var(--orange)">02</div>
+          <div>
+            <p>Microgestos</p>
+            <p class="sm">Cejas que suben, pausas, respiraci&oacute;n visible. Esto vende autenticidad.</p>
+          </div>
+        </div>
+        <div class="bullet-item fu d3">
+          <div class="bullet-icon" style="background:var(--blue)">03</div>
+          <div>
+            <p>Tono conversacional</p>
+            <p class="sm">Como si hablara con un amigo, NO como locutor de radio o presentador.</p>
+          </div>
+        </div>
+        <div class="bullet-item fu d4">
+          <div class="bullet-icon" style="background:var(--green)">04</div>
+          <div>
+            <p>Imperfecci&oacute;n controlada</p>
+            <p class="sm">El &ldquo;defecto&rdquo; planificado genera confianza. UGC real = mejor CTR.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ============ 03 AUDIO Y SUBTÍTULOS ============ -->
+<div class="slide"><div class="si" style="background:var(--bg)">
+  <div class="ct" style="align-items:stretch">
+    <div style="width:100%" class="col pad">
+      <div style="display:flex;align-items:center;gap:20px;margin-bottom:12px">
+        <div class="pill fu">Slide 3 &middot; Audio y subt&iacute;tulos</div>
+        <div class="pill pill-o fu" style="margin-bottom:24px">CR&Iacute;TICO</div>
+      </div>
+      <h2 class="fu d1" style="margin-bottom:40px">Audio y subt&iacute;tulos:<br><span class="purple">donde se gana o se pierde</span></h2>
+      <div class="audio-grid fu d2">
+        <!-- Audio -->
+        <div class="audio-card" style="border-top:5px solid var(--purple)">
+          <h3><span class="purple">Audio</span></h3>
+          <ul>
+            <li>Espa&ntilde;ol de Espa&ntilde;a</li>
+            <li>Natural, <strong>no rob&oacute;tico</strong></li>
+            <li>Con pausas reales y respiraci&oacute;n</li>
+          </ul>
+          <div class="tip-box" style="margin-top:24px">
+            <p class="tip-label">PLAN B</p>
+            <p style="font-size:20px">Si falla el audio generado &rarr; usar <strong class="purple">ElevenLabs</strong> para voiceover profesional.</p>
+          </div>
+        </div>
+        <!-- Subtítulos -->
+        <div class="audio-card audio-card-b" style="border-top:5px solid var(--blue)">
+          <h3><span class="blue">Subt&iacute;tulos</span></h3>
+          <ul>
+            <li>Agregarlos <strong>siempre</strong> en edici&oacute;n</li>
+            <li>Resaltar <strong>palabras clave</strong> en color</li>
+            <li>Mejoran <strong>retenci&oacute;n</strong> y conversi&oacute;n</li>
+          </ul>
+          <div style="background:var(--blueBg);border:2px solid var(--blueBorder);border-radius:var(--r);padding:24px 30px;margin-top:24px">
+            <p class="tip-label" style="color:var(--blue)">POR QU&Eacute;</p>
+            <p style="font-size:20px;color:var(--navy);font-weight:600">El 85% del contenido en redes se consume <strong class="blue">sin sonido</strong>. Sin subt&iacute;tulos = invisible.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ============ 04 RESULTADO BUSCADO ============ -->
+<div class="slide"><div class="si" style="background:var(--white)">
+  <div class="ct" style="align-items:stretch">
+    <div style="width:50%" class="col pad">
+      <div class="pill fu">Slide 4 &middot; Resultado</div>
+      <h2 class="fu d1">Objetivo final:<br><span class="accent">que parezca real</span></h2>
+      <div style="display:flex;gap:24px;margin-top:30px">
+        <div class="dbox dbox-yes fu d2">
+          <h3 style="color:var(--green)">Que parezca...</h3>
+          <ul>
+            <li>Grabado con el m&oacute;vil</li>
+            <li>Espont&aacute;neo</li>
+            <li>Real y cercano</li>
+          </ul>
+        </div>
+        <div class="dbox dbox-no fu d3">
+          <h3 style="color:var(--red)">NO debe parecer...</h3>
+          <ul>
+            <li>Publicidad</li>
+            <li>Actor profesional</li>
+            <li>Gui&oacute;n le&iacute;do</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="width:50%;padding:60px" class="col">
+      <div class="card fu d2" style="border-left:6px solid var(--purple);margin-bottom:30px">
+        <p style="font-size:16px;color:var(--purple);font-weight:800;letter-spacing:2px;margin-bottom:10px;font-family:'Poppins',sans-serif">F&Oacute;RMULA CLAVE</p>
+        <div class="flow" style="margin-top:20px;margin-bottom:0">
+          <div class="fstep" style="min-width:160px;font-size:22px">Prompt</div>
+          <div class="farrow">+</div>
+          <div class="fstep" style="min-width:160px;font-size:22px">Audio</div>
+          <div class="farrow">+</div>
+          <div class="fstep" style="min-width:160px;font-size:22px">Edici&oacute;n</div>
+        </div>
+        <div style="text-align:center;margin-top:20px">
+          <div class="farrow" style="font-size:36px">=</div>
+          <div class="fstep fstep-active" style="margin:10px auto 0;font-size:24px;min-width:300px;background:linear-gradient(135deg,var(--purple),var(--navy))">Resultado profesional</div>
+        </div>
+      </div>
+      <div style="text-align:center" class="fu d4">
+        <div style="width:80px;height:4px;background:var(--purple);border-radius:4px;margin:0 auto 16px"></div>
+        <p style="font-size:20px;font-weight:800;color:var(--purple);letter-spacing:5px;font-family:'Poppins',sans-serif">VIDEO IA</p>
+        <p style="font-size:16px;color:var(--textLight);letter-spacing:2px;margin-top:6px">contenido que convierte</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+</div>
+
+<script>
+(function(){
+  const S=document.querySelectorAll('.slide'),T=S.length,C=document.getElementById('counter'),P=document.getElementById('progress');
+  let c=0;
+  function go(n){if(n<0||n>=T)return;S[c].classList.remove('active');c=n;S[c].classList.add('active');C.textContent=(c+1)+' / '+T;P.style.width=((c+1)/T*100)+'%';}
+  function scale(){const s=Math.min(innerWidth/1920,innerHeight/1080);document.querySelectorAll('.si').forEach(e=>e.style.transform='scale('+s+')');}
+  scale();addEventListener('resize',scale);
+  addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();go(c+1);}
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();go(c-1);}
+    if(e.key==='Home')go(0);if(e.key==='End')go(T-1);
+    if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+  });
+  document.getElementById('fsBtn').addEventListener('click',function(){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();});
+  let tx=0;addEventListener('touchstart',function(e){tx=e.touches[0].clientX;});
+  addEventListener('touchend',function(e){const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50){d<0?go(c+1):go(c-1);}});
+})();
+</script>
+</body>
+</html>

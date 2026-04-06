@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>Seres Inside — Anexo Creatividades Instagram · Abril 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#1f2933;--orange:#e47b02;--orangeL:#ed8f0c;
+  --blue:#0699d2;--blueL:#3ab8ef;
+  --bg:#EAECEF;--white:#ffffff;
+  --textLight:#7b8794;
+  --rpill:50px;--r:20px;
+  --sh:0 0 14px rgba(0,0,0,.07);
+}
+html,body{font-family:'Montserrat',system-ui,sans-serif;background:#dde1e7;overflow:hidden;height:100%;width:100%;-webkit-font-smoothing:antialiased;}
+
+/* ─── DECK ─────────────────────────── */
+.deck{position:relative;width:100vw;height:100vh;}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .55s ease;}
+.slide.active{opacity:1;pointer-events:auto;}
+.si{width:1920px;height:1080px;transform-origin:center center;position:relative;overflow:hidden;display:flex;}
+
+/* ─── ANIMATIONS ────────────────────── */
+.slide.active .fu{animation:fu .65s cubic-bezier(.16,1,.3,1) both;}
+.d1{animation-delay:.06s}.d2{animation-delay:.13s}.d3{animation-delay:.20s}
+.d4{animation-delay:.27s}.d5{animation-delay:.34s}.d6{animation-delay:.41s}
+@keyframes fu{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+/* ─── CHROME ────────────────────────── */
+.pbar{position:fixed;top:0;left:0;height:5px;background:linear-gradient(90deg,var(--orange),var(--blue));z-index:200;transition:width .4s ease;}
+.cnt{position:fixed;bottom:26px;right:38px;font-size:14px;font-weight:700;color:var(--textLight);z-index:100;background:rgba(255,255,255,.9);padding:7px 18px;border-radius:var(--rpill);backdrop-filter:blur(8px);box-shadow:var(--sh);font-family:'Poppins',sans-serif;}
+.fbtn{position:fixed;bottom:26px;left:38px;background:rgba(255,255,255,.9);color:var(--textLight);border:none;padding:7px 18px;border-radius:var(--rpill);font-size:12px;font-weight:700;cursor:pointer;z-index:100;backdrop-filter:blur(8px);box-shadow:var(--sh);font-family:'Poppins',sans-serif;letter-spacing:1px;text-transform:uppercase;}
+.fbtn:hover{color:var(--orange);}
+
+/* ─── LEFT PANEL (MODO CLARO) ───────── */
+.lp{width:800px;min-width:800px;height:1080px;background:#ffffff;border-right:1px solid rgba(0,0,0,.07);display:flex;flex-direction:column;justify-content:center;padding:36px 68px;position:relative;overflow:hidden;flex-shrink:0;}
+.lp::before{content:'';position:absolute;top:-120px;right:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(228,123,2,.06) 0%,transparent 70%);pointer-events:none;}
+.lp::after{content:'';position:absolute;bottom:-100px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(6,153,210,.07) 0%,transparent 70%);pointer-events:none;}
+
+.camp-tag{display:inline-flex;align-items:center;padding:6px 16px;border-radius:var(--rpill);background:rgba(228,123,2,.08);border:1.5px solid rgba(228,123,2,.22);width:fit-content;margin-bottom:10px;}
+.camp-tag span{color:var(--orange);font-size:16px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;font-family:'Poppins',sans-serif;}
+
+.num-row{display:flex;align-items:baseline;gap:12px;margin-bottom:2px;}
+.num{font-size:68px;font-weight:900;color:var(--orange);line-height:1;letter-spacing:-.04em;font-family:'Poppins',sans-serif;}
+.total{font-size:26px;font-weight:700;color:rgba(0,0,0,.18);font-family:'Poppins',sans-serif;}
+
+.fmt-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:var(--rpill);font-size:16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-family:'Poppins',sans-serif;margin-bottom:8px;width:fit-content;}
+.fmt-img{background:rgba(6,153,210,.10);color:var(--blue);border:1.5px solid rgba(6,153,210,.28);}
+.fmt-reel{background:rgba(228,123,2,.08);color:var(--orange);border:1.5px solid rgba(228,123,2,.28);}
+
+.cname{font-size:26px;font-weight:700;color:var(--navy);line-height:1.30;margin-bottom:4px;}
+.obj-lbl{font-size:14px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,0,0,.32);font-family:'Poppins',sans-serif;margin-bottom:2px;}
+.obj-txt{font-size:20px;color:#4e5d6c;font-weight:500;margin-bottom:10px;line-height:1.4;}
+
+/* Copy box */
+.cbox{background:#f3f5f7;border:1.5px solid rgba(0,0,0,.07);border-left:4px solid var(--orange);border-radius:14px;padding:18px 20px 14px 22px;flex:1;position:relative;display:flex;flex-direction:column;}
+.cbox-lbl{position:absolute;top:-11px;left:16px;background:var(--orange);color:#fff;font-size:13px;font-weight:900;letter-spacing:2px;text-transform:uppercase;font-family:'Poppins',sans-serif;padding:3px 13px;border-radius:20px;}
+.cbody{font-size:22px;font-weight:500;line-height:1.60;color:var(--navy);white-space:pre-line;font-family:'Poppins',sans-serif;margin-top:4px;flex:1;}
+.cbody .cu{font-weight:800;color:var(--navy);}
+.cbody .cta{color:var(--orange);font-weight:700;font-style:normal;}
+.cht{font-size:18px;color:var(--blue);margin-top:8px;line-height:1.70;font-family:'Poppins',sans-serif;font-weight:500;flex-shrink:0;}
+
+/* ─── RIGHT PANEL ───────────────────── */
+.rp{flex:1;height:1080px;background:var(--bg);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:10px 0;}
+.rp::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 46%,rgba(255,255,255,.58) 0%,transparent 65%);pointer-events:none;z-index:0;}
+.rp::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,.052) 1px,transparent 1px);background-size:30px 30px;pointer-events:none;z-index:0;}
+
+/* ─── INSTAGRAM DESKTOP MOCKUP ──────── */
+/*  Replicates the real Instagram.com post viewer modal  */
+.ig-desktop{
+  display:flex;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 24px 80px rgba(0,0,0,.22),0 2px 10px rgba(0,0,0,.10);
+  position:relative;z-index:3;
+  /* reels son 920+info px de alto — escalar para que quepan con margen */
+  transform-origin:center center;
+}
+/* reels: escala el card completo para que entre en el panel de 1080px */
+.ig-desktop.reel-card{transform:scale(0.95);}
+.ig-desktop.img-card{transform:scale(1);}
+
+/* Left: media area */
+.ig-d-media{
+  background:#000;
+  overflow:hidden;
+  flex-shrink:0;
+  position:relative;
+}
+.ig-d-media img,.ig-d-media video{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.ig-d-media video{cursor:pointer;}
+.ig-reel-tag{
+  position:absolute;top:12px;right:12px;
+  background:rgba(0,0,0,.60);color:#fff;
+  font-size:10px;font-weight:800;padding:4px 10px;
+  border-radius:20px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;
+  letter-spacing:.5px;display:flex;align-items:center;gap:4px;z-index:2;
+}
+
+/* Right: info panel */
+.ig-d-info{
+  width:295px;
+  background:#fff;
+  border-left:1px solid rgba(0,0,0,.10);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* Header */
+.ig-dhead{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 14px;
+  border-bottom:1px solid rgba(0,0,0,.095);
+  flex-shrink:0;
+}
+.ig-dav{
+  width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,#e47b02 0%,#0699d2 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:11px;color:#fff;
+  font-family:'Poppins',sans-serif;flex-shrink:0;
+}
+.ig-dun{font-size:13.5px;font-weight:700;color:#000;font-family:-apple-system,'Segoe UI',Arial,sans-serif;flex:1;}
+.ig-dfbtn{font-size:13px;font-weight:700;color:#0699d2;font-family:-apple-system,'Segoe UI',Arial,sans-serif;cursor:default;white-space:nowrap;}
+.ig-ddots{font-size:16px;color:#262626;font-family:Arial,sans-serif;cursor:default;margin-left:6px;letter-spacing:1.5px;line-height:1;}
+
+/* Audio bar (reels) */
+.ig-daudio{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 14px;
+  border-bottom:1px solid rgba(0,0,0,.095);
+  flex-shrink:0;
+}
+.ig-daudio-disc{
+  width:26px;height:26px;border-radius:50%;
+  background:linear-gradient(135deg,#333,#555);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;flex-shrink:0;
+}
+.ig-daudio-text{font-size:12px;color:#262626;font-family:-apple-system,'Segoe UI',Arial,sans-serif;line-height:1.3;flex:1;overflow:hidden;}
+.ig-daudio-text .au{font-weight:700;}
+
+/* Caption body */
+.ig-dbody{
+  flex:1;
+  overflow-y:auto;
+  padding:14px;
+  scrollbar-width:none;
+}
+.ig-dbody::-webkit-scrollbar{display:none;}
+
+.ig-dcap{display:flex;gap:10px;margin-bottom:0;}
+.ig-dav-sm{
+  width:26px;height:26px;border-radius:50%;
+  background:linear-gradient(135deg,#e47b02 0%,#0699d2 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:8px;color:#fff;
+  font-family:'Poppins',sans-serif;flex-shrink:0;margin-top:1px;
+}
+.ig-dcap-text{font-size:13.5px;line-height:1.55;color:#262626;font-family:-apple-system,'Segoe UI',Arial,sans-serif;}
+.ig-dcap-text .cu{font-weight:700;}
+.ig-dcap-text .cta-text{color:#262626;font-weight:500;}
+.ig-ddate-sm{font-size:11.5px;color:#8e8e8e;font-family:-apple-system,'Segoe UI',Arial,sans-serif;margin-top:10px;padding-left:36px;}
+
+/* Footer */
+.ig-dfoot{
+  flex-shrink:0;
+  border-top:1px solid rgba(0,0,0,.095);
+}
+.ig-dact{display:flex;align-items:center;padding:8px 12px 5px;}
+.ig-dact-l{display:flex;gap:13px;flex:1;align-items:center;}
+.ig-dico{font-size:22px;line-height:1;cursor:default;user-select:none;}
+.ig-dlikes{font-size:13px;font-weight:700;color:#262626;font-family:-apple-system,'Segoe UI',Arial,sans-serif;padding:1px 12px 4px;}
+.ig-dfdate{font-size:11px;color:#c7c7c7;font-family:-apple-system,'Segoe UI',Arial,sans-serif;padding:0 12px 8px;text-transform:uppercase;letter-spacing:.4px;}
+.ig-dcomment-row{display:flex;align-items:center;gap:8px;padding:8px 12px 10px;border-top:1px solid rgba(0,0,0,.065);}
+.ig-dcomment-ico{font-size:22px;user-select:none;}
+.ig-dcomment-ph{flex:1;font-size:13.5px;color:#8e8e8e;font-family:-apple-system,'Segoe UI',Arial,sans-serif;}
+.ig-dcomment-pub{font-size:13px;font-weight:700;color:#0699d2;font-family:-apple-system,'Segoe UI',Arial,sans-serif;}
+
+/* ─── COVER & SUMMARY HELPERS ──────── */
+.cover-bg{background:#ffffff;display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
+.stat-n{font-size:65px;font-weight:900;line-height:1;font-family:'Poppins',sans-serif;}
+.stat-l{font-size:17px;font-weight:700;letter-spacing:3px;text-transform:uppercase;font-family:'Poppins',sans-serif;color:rgba(0,0,0,.38);margin-top:5px;}
+.summ-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;width:100%;max-width:1180px;}
+.summ-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.10);position:relative;}
+.summ-media{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#e0e0e0;}
+.summ-media-v{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#111;}
+.summ-foot{padding:9px 13px 11px;}
+.summ-num{font-size:12px;font-weight:800;color:var(--textLight);letter-spacing:2px;font-family:'Poppins',sans-serif;text-transform:uppercase;}
+.summ-name{font-size:15px;font-weight:700;color:var(--navy);line-height:1.3;margin-top:2px;}
+.sf{position:absolute;top:8px;left:8px;padding:3px 9px;border-radius:20px;font-size:9.5px;font-weight:800;letter-spacing:.5px;font-family:'Poppins',sans-serif;text-transform:uppercase;}
+.sf-img{background:rgba(6,153,210,.88);color:#fff;}
+.sf-reel{background:rgba(228,123,2,.92);color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="pbar" id="progress"></div>
+<div class="cnt" id="counter">1 / 9</div>
+<button class="fbtn" id="fsBtn">F · Fullscreen</button>
+
+<div class="deck" id="deck">
+
+
+<!-- ══════════════════════════════════════════════════════════
+     01 · PORTADA
+══════════════════════════════════════════════════════════ -->
+<div class="slide active">
+<div class="si cover-bg">
+  <div style="position:absolute;top:-220px;right:-220px;width:680px;height:680px;border-radius:50%;border:1.5px solid rgba(228,123,2,.15);pointer-events:none;"></div>
+  <div style="position:absolute;top:-100px;right:-100px;width:420px;height:420px;border-radius:50%;border:1.5px solid rgba(228,123,2,.10);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-180px;left:-180px;width:620px;height:620px;border-radius:50%;border:1.5px solid rgba(6,153,210,.13);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-60px;left:-60px;width:360px;height:360px;border-radius:50%;border:1.5px solid rgba(6,153,210,.09);pointer-events:none;"></div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;text-align:center;padding:80px;position:relative;z-index:2;">
+    <img src="assets/logo-azul.svg" class="fu" style="height:70px;width:auto;margin-bottom:44px;">
+
+    <div class="fu d1" style="display:inline-flex;align-items:center;background:rgba(228,123,2,.08);border:1.5px solid rgba(228,123,2,.25);border-radius:var(--rpill);padding:9px 26px;margin-bottom:30px;">
+      <span style="color:var(--orange);font-size:16px;font-weight:800;letter-spacing:4px;text-transform:uppercase;font-family:'Poppins',sans-serif;">Anexo · Propuesta Publicitaria · Abril 2026</span>
+    </div>
+
+    <h1 class="fu d2" style="color:var(--navy);font-size:96px;line-height:1.02;letter-spacing:-.04em;margin-bottom:16px;">
+      Creatividades<br><span style="color:var(--orange);">en plataforma</span>
+    </h1>
+
+    <p class="fu d3" style="font-size:29px;color:#4e5d6c;line-height:1.55;margin-bottom:54px;max-width:840px;">
+      Vista previa real de cada publicación en Instagram&nbsp;&nbsp;·&nbsp;&nbsp;Campaña Diplomatura
+    </p>
+
+    <div class="fu d4" style="display:flex;align-items:center;gap:50px;">
+      <div style="text-align:center;">
+        <div class="stat-n" style="color:var(--blue);">3</div>
+        <div class="stat-l">Imágenes</div>
+      </div>
+      <div style="width:1px;height:60px;background:rgba(0,0,0,.10);"></div>
+      <div style="text-align:center;">
+        <div class="stat-n" style="color:var(--orange);">4</div>
+        <div class="stat-l">Reels</div>
+      </div>
+      <div style="width:1px;height:60px;background:rgba(0,0,0,.10);"></div>
+      <div style="text-align:center;">
+        <div class="stat-n" style="color:var(--navy);">7</div>
+        <div class="stat-l">Creatividades</div>
+      </div>
+    </div>
+
+    <div class="fu d5" style="margin-top:52px;display:flex;gap:10px;justify-content:center;">
+      <div style="width:60px;height:4px;background:var(--orange);border-radius:4px;"></div>
+      <div style="width:30px;height:4px;background:var(--blue);border-radius:4px;opacity:.35;"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     02 · GRÁFICA 1 — "Transforma tu manera" (azul con naranja)
+══════════════════════════════════════════════════════════ -->
+<div class="slide">
+<div class="si">
+
+  <div class="lp">
+    <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
+    <div class="num-row fu d1"><div class="num">01</div><div class="total">/ 07</div></div>
+    <div class="fmt-badge fmt-img fu d2">🖼 Imagen · Feed</div>
+    <div class="cname fu d3">Gráfica feed · "Transforma tu manera de enseñar, vivir y acompañar"</div>
+    <div class="obj-lbl fu d4">Objetivo</div>
+    <div class="obj-txt fu d4">Concientizar sobre el valor de las habilidades blandas + conversión. Público profesional, docente y líderes de equipo.</div>
+    <div class="cbox fu d5">
+      <div class="cbox-lbl">Caption</div>
+      <div class="cbody">Hoy se habla mucho de tecnología y de todo lo que está cambiando… pero hay algo que cada vez toma más valor: cómo nos comunicamos, cómo trabajamos con otros y cómo manejamos situaciones en lo cotidiano.
+
+Eso es lo que hoy el mercado llama habilidades blandas.
+
+Desde Seres Inside desarrollamos una diplomatura en educación emocional y bienestar con herramientas prácticas que podés aplicar en tu trabajo y en tu vida diaria.
+
+👉 Modalidad flexible, desde cualquier lugar del país.
+
+<span class="cta">Escribinos por WhatsApp y te contamos cómo sumarte.</span></div>
+      <div class="cht">#HabilidadesBlandas #EducaciónEmocional #Diplomatura #SeresInside
+#FormaciónOnline #DesarrolloProfesional #Bienestar</div>
+    </div>
+  </div>
+
+  <div class="rp">
+    <div class="ig-desktop fu d3">
+      <!-- MEDIA -->
+      <div class="ig-d-media" style="width:616px;height:616px;">
+        <img src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META%20(1).jpg" alt="Gráfica transforma tu manera">
+      </div>
+      <!-- INFO -->
+      <div class="ig-d-info" style="height:616px;">
+        <div class="ig-dhead">
+          <div class="ig-dav">SI</div>
+          <span class="ig-dun">seres_inside</span>
+          <span class="ig-dfbtn">Seguir</span>
+          <span class="ig-ddots">···</span>
+        </div>
+        <div class="ig-dbody">
+          <div class="ig-dcap">
+            <div class="ig-dav-sm">SI</div>
+            <div class="ig-dcap-text">
+              <span class="cu">seres_inside</span> Hoy se habla mucho de tecnología y de todo lo que está cambiando… pero hay algo que cada vez toma más valor: cómo nos comunicamos, cómo trabajamos con otros y cómo manejamos situaciones en lo cotidiano.<br><br>Eso es lo que hoy el mercado llama habilidades blandas.<br><br>Desde Seres Inside desarrollamos una diplomatura en educación emocional y bienestar con herramientas prácticas que podés aplicar en tu trabajo y en tu vida diaria.<br><br>👉 Modalidad flexible, desde cualquier lugar del país.<br><br><span class="cta-text">Escribinos por WhatsApp y te contamos cómo sumarte.</span>
+            </div>
+          </div>
+          <div class="ig-ddate-sm">1 sem</div>
+        </div>
+        <div class="ig-dfoot">
+          <div class="ig-dact">
+            <div class="ig-dact-l">
+              <span class="ig-dico">🤍</span>
+              <span class="ig-dico">💬</span>
+              <span class="ig-dico" style="font-size:19px;transform:rotate(-30deg);display:inline-block;">✈️</span>
+            </div>
+            <span class="ig-dico" style="font-size:19px;">🔖</span>
+          </div>
+          <div class="ig-dlikes">248 Me gusta</div>
+          <div class="ig-dfdate">27 de marzo</div>
+          <div class="ig-dcomment-row">
+            <span class="ig-dcomment-ico">🙂</span>
+            <span class="ig-dcomment-ph">Agrega un comentario...</span>
+            <span class="ig-dcomment-pub">Publicar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     03 · GRÁFICA 2 — "Formate desde cualquier lugar del país"
+══════════════════════════════════════════════════════════ -->
+<div class="slide">
+<div class="si">
+
+  <div class="lp">
+    <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
+    <div class="num-row fu d1"><div class="num">02</div><div class="total">/ 07</div></div>
+    <div class="fmt-badge fmt-img fu d2">🖼 Imagen · Feed</div>
+    <div class="cname fu d3">Gráfica feed · "Formate desde cualquier lugar del país"</div>
+    <div class="obj-lbl fu d4">Objetivo</div>
+    <div class="obj-txt fu d4">Accesibilidad. Público de todo el país que quiere formarse. Derribar la barrera de la distancia con el diferencial virtual.</div>
+    <div class="cbox fu d5">
+      <div class="cbox-lbl">Caption</div>
+      <div class="cbody">Hoy podés capacitarte en cualquier momento y desde cualquier lugar… pero no todas las formaciones trabajan lo que realmente hace la diferencia.
+
+La comunicación, la empatía, el trabajo en equipo, la gestión emocional.
+
+Eso es lo que hoy se busca en el mundo laboral.
+
+Esta diplomatura está pensada para que desarrolles esas habilidades de forma práctica y aplicable.
+
+👉 100% virtual, a tu ritmo.
+
+<span class="cta">Escribinos y te pasamos toda la info.</span></div>
+      <div class="cht">#HabilidadesBlandas #FormaciónVirtual #EducaciónEmocional #Diplomatura
+#SeresInside #DesdeDondeEstés #MundoLaboral</div>
+    </div>
+  </div>
+
+  <div class="rp">
+    <div class="ig-desktop fu d3">
+      <div class="ig-d-media" style="width:616px;height:616px;">
+        <img src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META%20(2).jpg" alt="Gráfica formate desde cualquier lugar">
+      </div>
+      <div class="ig-d-info" style="height:616px;">
+        <div class="ig-dhead">
+          <div class="ig-dav">SI</div>
+          <span class="ig-dun">seres_inside</span>
+          <span class="ig-dfbtn">Seguir</span>
+          <span class="ig-ddots">···</span>
+        </div>
+        <div class="ig-dbody">
+          <div class="ig-dcap">
+            <div class="ig-dav-sm">SI</div>
+            <div class="ig-dcap-text">
+              <span class="cu">seres_inside</span> Hoy podés capacitarte en cualquier momento y desde cualquier lugar… pero no todas las formaciones trabajan lo que realmente hace la diferencia.<br><br>La comunicación, la empatía, el trabajo en equipo, la gestión emocional.<br><br>Eso es lo que hoy se busca en el mundo laboral.<br><br>Esta diplomatura está pensada para que desarrolles esas habilidades de forma práctica y aplicable.<br><br>👉 100% virtual, a tu ritmo.<br><br><span class="cta-text">Escribinos y te pasamos toda la info.</span>
+            </div>
+          </div>
+          <div class="ig-ddate-sm">1 sem</div>
+        </div>
+        <div class="ig-dfoot">
+          <div class="ig-dact">
+            <div class="ig-dact-l">
+              <span class="ig-dico">🤍</span>
+              <span class="ig-dico">💬</span>
+              <span class="ig-dico" style="font-size:19px;transform:rotate(-30deg);display:inline-block;">✈️</span>
+            </div>
+            <span class="ig-dico" style="font-size:19px;">🔖</span>
+          </div>
+          <div class="ig-dlikes">312 Me gusta</div>
+          <div class="ig-dfdate">28 de marzo</div>
+          <div class="ig-dcomment-row">
+            <span class="ig-dcomment-ico">🙂</span>
+            <span class="ig-dcomment-ph">Agrega un comentario...</span>
+            <span class="ig-dcomment-pub">Publicar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     04 · GRÁFICA 3 — "Inscripciones abiertas"
+══════════════════════════════════════════════════════════ -->
+<div class="slide">
+<div class="si">
+
+  <div class="lp">
+    <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
+    <div class="num-row fu d1"><div class="num">03</div><div class="total">/ 07</div></div>
+    <div class="fmt-badge fmt-img fu d2">🖼 Imagen · Feed</div>
+    <div class="cname fu d3">Gráfica feed · "Inscripciones abiertas"</div>
+    <div class="obj-lbl fu d4">Objetivo</div>
+    <div class="obj-txt fu d4">Conversión directa. Habilidades blandas como diferencial profesional. Activar inscripciones con urgencia y accesibilidad de pago.</div>
+    <div class="cbox fu d5">
+      <div class="cbox-lbl">Caption</div>
+      <div class="cbody">Las habilidades blandas ya no son un complemento.
+
+Hoy son fundamentales para el desarrollo profesional y personal.
+
+Desde Seres Inside creamos una diplomatura para que puedas trabajar estas habilidades con herramientas concretas y aplicables a la vida real.
+
+Comunicación, empatía, vínculos, gestión emocional.
+
+👉 Todo en un formato flexible y accesible.
+
+<span class="cta">Sumate ahora. Escribinos por WhatsApp.</span></div>
+      <div class="cht">#HabilidadesBlandas #EducaciónEmocional #Diplomatura #SeresInside
+#InscripcionesAbiertas #FormaciónOnline #DesarrolloPersonal</div>
+    </div>
+  </div>
+
+  <div class="rp">
+    <div class="ig-desktop fu d3">
+      <div class="ig-d-media" style="width:616px;height:616px;">
+        <img src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META.jpg" alt="Gráfica inscripciones abiertas">
+      </div>
+      <div class="ig-d-info" style="height:616px;">
+        <div class="ig-dhead">
+          <div class="ig-dav">SI</div>
+          <span class="ig-dun">seres_inside</span>
+          <span class="ig-dfbtn">Seguir</span>
+          <span class="ig-ddots">···</span>
+        </div>
+        <div class="ig-dbody">
+          <div class="ig-dcap">
+            <div class="ig-dav-sm">SI</div>
+            <div class="ig-dcap-text">
+              <span class="cu">seres_inside</span> Las habilidades blandas ya no son un complemento.<br><br>Hoy son fundamentales para el desarrollo profesional y personal.<br><br>Desde Seres Inside creamos una diplomatura para que puedas trabajar estas habilidades con herramientas concretas y aplicables a la vida real.<br><br>Comunicación, empatía, vínculos, gestión emocional.<br><br>👉 Todo en un formato flexible y accesible.<br><br><span class="cta-text">Sumate ahora. Escribinos por WhatsApp.</span>
+            </div>
+          </div>
+          <div class="ig-ddate-sm">1 sem</div>
+        </div>
+        <div class="ig-dfoot">
+          <div class="ig-dact">
+            <div class="ig-dact-l">
+              <span class="ig-dico">🤍</span>
+              <span class="ig-dico">💬</span>
+              <span class="ig-dico" style="font-size:19px;transform:rotate(-30deg);display:inline-block;">✈️</span>
+            </div>
+            <span class="ig-dico" style="font-size:19px;">🔖</span>
+          </div>
+          <div class="ig-dlikes">187 Me gusta</div>
+          <div class="ig-dfdate">29 de marzo</div>
+          <div class="ig-dcomment-row">
+            <span class="ig-dcomment-ico">🙂</span>
+            <span class="ig-dcomment-ph">Agrega un comentario...</span>
+            <span class="ig-dcomment-pub">Publicar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     05 · REEL 1 — Testimonio (docente Chubut)
+══════════════════════════════════════════════════════════ -->
+<div class="slide">
+<div class="si">
+
+  <div class="lp">
+    <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
+    <div class="num-row fu d1"><div class="num">04</div><div class="total">/ 07</div></div>
+    <div class="fmt-badge fmt-reel fu d2">▶ Reel · Testimonio</div>
+    <div class="cname fu d3">Reel testimonio · Docente de Chubut — prueba social geográfica</div>
+    <div class="obj-lbl fu d4">Objetivo</div>
+    <div class="obj-txt fu d4">Prueba social geográfica. Validar que la formación es aplicable en todo el país y que ya hay personas que la están viviendo.</div>
+    <div class="cbox fu d5">
+      <div class="cbox-lbl">Caption</div>
+      <div class="cbody">Cuando escuchás a alguien que ya lo está viviendo… se entiende distinto.
+
+Esta diplomatura no es solo contenido.
+
+Es una experiencia práctica que transforma la forma de trabajar, vincularse y acompañar.
+
+👉 Personas de todo el país ya están aplicando estas herramientas en su día a día.
+
+<span class="cta">Escribinos y te contamos cómo sumarte.</span></div>
+      <div class="cht">#Testimonio #HabilidadesBlandas #SeresInside #Diplomatura
+#EducaciónEmocional #ExperienciaReal #TodoElPaís</div>
+    </div>
+  </div>
+
+  <div class="rp">
+    <div class="ig-desktop fu d3">
+      <div class="ig-d-media" style="width:518px;height:920px;position:relative;">
+        <video src="referencias/Campa%C3%B1a%201/REEL%202_TESTIMONIO.mp4" muted playsinline preload="metadata" loop style="width:100%;height:100%;object-fit:cover;" onclick="this.paused?this.play():this.pause()"></video>
+        <div class="ig-reel-tag">▶ REEL</div>
+      </div>
+      <div class="ig-d-info" style="height:920px;">
+        <div class="ig-dhead">
+          <div class="ig-dav">SI</div>
+          <span class="ig-dun">seres_inside</span>
+          <span class="ig-dfbtn">Seguir</span>
+          <span class="ig-ddots">···</span>
+        </div>
+        <div class="ig-daudio">
+          <div class="ig-daudio-disc">🎵</div>
+          <div class="ig-daudio-text"><span class="au">seres_inside</span><br>Audio original</div>
+        </div>
+        <div class="ig-dbody">
+          <div class="ig-dcap">
+            <div class="ig-dav-sm">SI</div>
+            <div class="ig-dcap-text">
+              <span class="cu">seres_inside</span> Cuando escuchás a alguien que ya lo está viviendo… se entiende distinto.<br><br>Esta diplomatura no es solo contenido.<br><br>Es una experiencia práctica que transforma la forma de trabajar, vincularse y acompañar.<br><br>👉 Personas de todo el país ya están aplicando estas herramientas en su día a día.<br><br><span class="cta-text">Escribinos y te contamos cómo sumarte.</span>
+            </div>
+          </div>
+          <div class="ig-ddate-sm">1 sem</div>
+        </div>
+        <div class="ig-dfoot">
+          <div class="ig-dact">
+            <div class="ig-dact-l">
+              <span class="ig-dico">🤍</span>
+              <span class="ig-dico">💬</span>
+              <span class="ig-dico" style="font-size:19px;transform:rotate(-30deg);display:inline-block;">✈️</span>
+            </div>
+            <span class="ig-dico" style="font-size:19px;">🔖</span>
+          </div>
+          <div class="ig-dlikes">529 Me gusta</div>
+          <div class="ig-dfdate">30 de marzo</div>
+          <div class="ig-dcomment-row">
+            <span class="ig-dcomment-ico">🙂</span>
+            <span class="ig-dcomment-ph">Agrega un comentario...</span>
+            <span class="ig-dcomment-pub">Publicar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     06 · REEL 2 — Sol (explicativo / UGC)
+══════════════════════════════════════════════════════════ -->
+<div class="slide">
+<div class="si">
+
+  <div class="lp">
+    <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
+    <div class="num-row fu d1"><div class="num">05</div><div class="total">/ 07</div></div>
+    <div class="fmt-badge fmt-reel fu d2">▶ Reel · UGC</div>
+    <div class="cname fu d3">Reel UGC · Sol explica la propuesta — formato de alta credibilidad</div>
+    <div class="obj-lbl fu d4">Objetivo</div>
+    <div class="obj-txt fu d4">Explicación auténtica. Sol presenta la diplomatura desde su experiencia. El formato UGC genera mayor confianza en Meta que los reels institucionales.</div>
+    <div class="cbox fu d5">
+      <div class="cbox-lbl">Caption</div>
+      <div class="cbody">Una formación no es solo lo que aprendés… sino lo que podés aplicar.
+
+Esta diplomatura en educación emocional y bienestar está diseñada para que trabajes habilidades clave como la comunicación, la empatía y la gestión de situaciones reales.
+
+👉 Modalidad flexible, contenido práctico y comunidad de aprendizaje.
+
+<span class="cta">Escribinos por WhatsApp y te contamos todo.</span></div>
+      <div class="cht">#HabilidadesBlandas #UGC #SeresInside #Diplomatura
+#EducaciónEmocional #FormaciónPráctica #ComunidadDeAprendizaje</div>
+    </div>
+  </div>
+
+  <div class="rp">
+    <div class="ig-desktop fu d3">
+      <div class="ig-d-media" style="width:518px;height:920px;position:relative;">
+        <video src="referencias/Campa%C3%B1a%201/REEL%203_%20UGC%20SOL.mp4" muted playsinline preload="metadata" loop style="width:100%;height:100%;object-fit:cover;" onclick="this.paused?this.play():this.pause()"></video>
+        <div class="ig-reel-tag">▶ REEL</div>
+      </div>
+      <div class="ig-d-info" style="height:920px;">
+        <div class="ig-dhead">
+          <div class="ig-dav">SI</div>
+          <span class="ig-dun">seres_inside</span>
+          <span class="ig-dfbtn">Seguir</span>
+          <span class="ig-ddots">···</span>
+        </div>
+        <div class="ig-daudio">
+          <div class="ig-daudio-disc">🎵</div>
+          <div class="ig-daudio-text"><span class="au">seres_inside</span><br>Audio original</div>
+        </div>
+        <div class="ig-dbody">
+          <div class="ig-dcap">
+            <div class="ig-dav-sm">SI</div>
+            <div class="ig-dcap-text">
+              <span class="cu">seres_inside</span> Una formación no es solo lo que aprendés… sino lo que podés aplicar.<br><br>Esta diplomatura en educación emocional y bienestar está diseñada para que trabajes habilidades clave como la comunicación, la empatía y la gestión de situaciones reales.<br><br>👉 Modalidad flexible, contenido práctico y comunidad de aprendizaje.<br><br><span class="cta-text">Escribinos por WhatsApp y te contamos todo.</span>
+            </div>
+          </div>
+          <div class="ig-ddate-sm">1 sem</div>
+        </div>
+        <div class="ig-dfoot">
+          <div class="ig-dact">
+            <div class="ig-dact-l">
+              <span class="ig-dico">🤍</span>
+              <span class="ig-dico">💬</span>
+              <span class="ig-dico" style="font-size:19px;transform:rotate(-30deg);display:inline-block;">✈️</span>
+            </div>
+            <span class="ig-dico" style="font-size:19px;">🔖</span>
+          </div>
+          <div class="ig-dlikes">743 Me gusta</div>
+          <div class="ig-dfdate">31 de marzo</div>
+          <div class="ig-dcomment-row">
+            <span class="ig-dcomment-ico">🙂</span>
+            <span class="ig-dcomment-ph">Agrega un comentario...</span>
+            <span class="ig-dcomment-pub">Publicar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     07 · REEL 3 — Gráfico animado v.1 (música)
+══════════════════════════════════════════════════════════ -->
+<div class="slide">
+<div class="si">
+
+  <div class="lp">
+    <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
+    <div class="num-row fu d1"><div class="num">06</div><div class="total">/ 07</div></div>
+    <div class="fmt-badge fmt-reel fu d2">▶ Reel · Gráfico animado</div>
+    <div class="cname fu d3">Reel gráfico · Música v.1 — recordación + conversión</div>
+    <div class="obj-lbl fu d4">Objetivo</div>
+    <div class="obj-txt fu d4">Recordación de marca. Habilidades blandas como diferencial clave. Ideal para retargeting y audiencias que ya conocen Seres Inside.</div>
+    <div class="cbox fu d5">
+      <div class="cbox-lbl">Caption</div>
+      <div class="cbody">Hoy el diferencial no está solo en lo técnico.
+
+Está en cómo te vinculás, cómo comunicás y cómo resolvés situaciones.
+
+Desarrollar habilidades blandas ya no es opcional.
+
+👉 Es una herramienta clave para el presente y el futuro.
+
+<span class="cta">Escribinos y te contamos cómo empezar.</span></div>
+      <div class="cht">#HabilidadesBlandas #EducaciónEmocional #SeresInside #Diplomatura
+#MundoLaboral #FormaciónOnline #FuturoDelTrabajo</div>
+    </div>
+  </div>
+
+  <div class="rp">
+    <div class="ig-desktop fu d3">
+      <div class="ig-d-media" style="width:518px;height:920px;position:relative;">
+        <video src="referencias/Campa%C3%B1a%201/REEL_PUBLI_MUSICA%201.mp4" muted playsinline preload="metadata" loop style="width:100%;height:100%;object-fit:cover;" onclick="this.paused?this.play():this.pause()"></video>
+        <div class="ig-reel-tag">▶ REEL</div>
+      </div>
+      <div class="ig-d-info" style="height:920px;">
+        <div class="ig-dhead">
+          <div class="ig-dav">SI</div>
+          <span class="ig-dun">seres_inside</span>
+          <span class="ig-dfbtn">Seguir</span>
+          <span class="ig-ddots">···</span>
+        </div>
+        <div class="ig-daudio">
+          <div class="ig-daudio-disc">🎵</div>
+          <div class="ig-daudio-text"><span class="au">Música motivacional</span><br>Audio licenciado</div>
+        </div>
+        <div class="ig-dbody">
+          <div class="ig-dcap">
+            <div class="ig-dav-sm">SI</div>
+            <div class="ig-dcap-text">
+              <span class="cu">seres_inside</span> Hoy el diferencial no está solo en lo técnico.<br><br>Está en cómo te vinculás, cómo comunicás y cómo resolvés situaciones.<br><br>Desarrollar habilidades blandas ya no es opcional.<br><br>👉 Es una herramienta clave para el presente y el futuro.<br><br><span class="cta-text">Escribinos y te contamos cómo empezar.</span>
+            </div>
+          </div>
+          <div class="ig-ddate-sm">1 sem</div>
+        </div>
+        <div class="ig-dfoot">
+          <div class="ig-dact">
+            <div class="ig-dact-l">
+              <span class="ig-dico">🤍</span>
+              <span class="ig-dico">💬</span>
+              <span class="ig-dico" style="font-size:19px;transform:rotate(-30deg);display:inline-block;">✈️</span>
+            </div>
+            <span class="ig-dico" style="font-size:19px;">🔖</span>
+          </div>
+          <div class="ig-dlikes">418 Me gusta</div>
+          <div class="ig-dfdate">1 de abril</div>
+          <div class="ig-dcomment-row">
+            <span class="ig-dcomment-ico">🙂</span>
+            <span class="ig-dcomment-ph">Agrega un comentario...</span>
+            <span class="ig-dcomment-pub">Publicar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     08 · REEL 4 — Gráfico animado v.2 (institucional / más dinámico)
+══════════════════════════════════════════════════════════ -->
+<div class="slide">
+<div class="si">
+
+  <div class="lp">
+    <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
+    <div class="num-row fu d1"><div class="num">07</div><div class="total">/ 07</div></div>
+    <div class="fmt-badge fmt-reel fu d2">▶ Reel · Institucional</div>
+    <div class="cname fu d3">Reel institucional · Música v.2 — impacto en 3 segundos</div>
+    <div class="obj-lbl fu d4">Objetivo</div>
+    <div class="obj-txt fu d4">Impacto inmediato. Copy en lista para captar atención al instante. Audiencia amplia — tráfico frío y reconocimiento de marca.</div>
+    <div class="cbox fu d5">
+      <div class="cbox-lbl">Caption</div>
+      <div class="cbody">Comunicación.
+Empatía.
+Trabajo en equipo.
+Gestión emocional.
+
+Eso es lo que hoy marca la diferencia.
+
+Y eso es lo que trabajamos en esta diplomatura.
+
+👉 Herramientas prácticas para aplicar en el trabajo y en la vida cotidiana.
+
+<span class="cta">Escribinos por WhatsApp y sumate.</span></div>
+      <div class="cht">#HabilidadesBlandas #Comunicación #Empatía #SeresInside
+#Diplomatura #EducaciónEmocional #DesarrolloProfesional</div>
+    </div>
+  </div>
+
+  <div class="rp">
+    <div class="ig-desktop fu d3">
+      <div class="ig-d-media" style="width:518px;height:920px;position:relative;">
+        <video src="referencias/Campa%C3%B1a%201/REEL_PUBLI_MUSICA%20INSTIT.mp4" muted playsinline preload="metadata" loop style="width:100%;height:100%;object-fit:cover;" onclick="this.paused?this.play():this.pause()"></video>
+        <div class="ig-reel-tag">▶ REEL</div>
+      </div>
+      <div class="ig-d-info" style="height:920px;">
+        <div class="ig-dhead">
+          <div class="ig-dav">SI</div>
+          <span class="ig-dun">seres_inside</span>
+          <span class="ig-dfbtn">Seguir</span>
+          <span class="ig-ddots">···</span>
+        </div>
+        <div class="ig-daudio">
+          <div class="ig-daudio-disc">🎵</div>
+          <div class="ig-daudio-text"><span class="au">Música institucional</span><br>Audio licenciado</div>
+        </div>
+        <div class="ig-dbody">
+          <div class="ig-dcap">
+            <div class="ig-dav-sm">SI</div>
+            <div class="ig-dcap-text">
+              <span class="cu">seres_inside</span> Comunicación.<br>Empatía.<br>Trabajo en equipo.<br>Gestión emocional.<br><br>Eso es lo que hoy marca la diferencia.<br><br>Y eso es lo que trabajamos en esta diplomatura.<br><br>👉 Herramientas prácticas para aplicar en el trabajo y en la vida cotidiana.<br><br><span class="cta-text">Escribinos por WhatsApp y sumate.</span>
+            </div>
+          </div>
+          <div class="ig-ddate-sm">1 sem</div>
+        </div>
+        <div class="ig-dfoot">
+          <div class="ig-dact">
+            <div class="ig-dact-l">
+              <span class="ig-dico">🤍</span>
+              <span class="ig-dico">💬</span>
+              <span class="ig-dico" style="font-size:19px;transform:rotate(-30deg);display:inline-block;">✈️</span>
+            </div>
+            <span class="ig-dico" style="font-size:19px;">🔖</span>
+          </div>
+          <div class="ig-dlikes">391 Me gusta</div>
+          <div class="ig-dfdate">2 de abril</div>
+          <div class="ig-dcomment-row">
+            <span class="ig-dcomment-ico">🙂</span>
+            <span class="ig-dcomment-ph">Agrega un comentario...</span>
+            <span class="ig-dcomment-pub">Publicar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     09 · RESUMEN — Vista de las 7 creatividades
+══════════════════════════════════════════════════════════ -->
+<div class="slide">
+<div class="si cover-bg" style="flex-direction:column;align-items:center;justify-content:center;gap:36px;padding:50px 70px;">
+  <div style="position:absolute;top:-200px;right:-200px;width:580px;height:580px;border-radius:50%;border:1.5px solid rgba(228,123,2,.12);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-160px;left:-160px;width:500px;height:500px;border-radius:50%;border:1.5px solid rgba(6,153,210,.12);pointer-events:none;"></div>
+
+  <div style="text-align:center;position:relative;z-index:2;" class="fu">
+    <div style="display:inline-flex;background:rgba(228,123,2,.08);border:1.5px solid rgba(228,123,2,.22);border-radius:var(--rpill);padding:7px 22px;margin-bottom:16px;">
+      <span style="color:var(--orange);font-size:16px;font-weight:800;letter-spacing:3px;text-transform:uppercase;font-family:'Poppins',sans-serif;">Resumen · 7 creatividades · Campaña Diplomatura</span>
+    </div>
+    <h2 style="color:var(--navy);font-size:46px;font-weight:900;letter-spacing:-.02em;">Material listo para activar</h2>
+  </div>
+
+  <div class="summ-grid fu d2" style="position:relative;z-index:2;">
+
+    <div class="summ-card">
+      <span class="sf sf-img">Imagen</span>
+      <img class="summ-media" src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META%20(1).jpg" alt="">
+      <div class="summ-foot"><div class="summ-num">01 / 07</div><div class="summ-name">Transforma tu manera de enseñar, vivir y acompañar</div></div>
+    </div>
+
+    <div class="summ-card">
+      <span class="sf sf-img">Imagen</span>
+      <img class="summ-media" src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META%20(2).jpg" alt="">
+      <div class="summ-foot"><div class="summ-num">02 / 07</div><div class="summ-name">Formate desde cualquier lugar del país</div></div>
+    </div>
+
+    <div class="summ-card">
+      <span class="sf sf-img">Imagen</span>
+      <img class="summ-media" src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META.jpg" alt="">
+      <div class="summ-foot"><div class="summ-num">03 / 07</div><div class="summ-name">Inscripciones abiertas</div></div>
+    </div>
+
+    <div class="summ-card">
+      <span class="sf sf-reel">Reel</span>
+      <video class="summ-media-v" src="referencias/Campa%C3%B1a%201/REEL%202_TESTIMONIO.mp4" muted playsinline preload="metadata" style="object-fit:cover;"></video>
+      <div class="summ-foot"><div class="summ-num">04 / 07</div><div class="summ-name">Testimonio · Docente de Chubut</div></div>
+    </div>
+
+    <div class="summ-card">
+      <span class="sf sf-reel">Reel</span>
+      <video class="summ-media-v" src="referencias/Campa%C3%B1a%201/REEL%203_%20UGC%20SOL.mp4" muted playsinline preload="metadata" style="object-fit:cover;"></video>
+      <div class="summ-foot"><div class="summ-num">05 / 07</div><div class="summ-name">UGC · Sol explica la propuesta</div></div>
+    </div>
+
+    <div class="summ-card">
+      <span class="sf sf-reel">Reel</span>
+      <video class="summ-media-v" src="referencias/Campa%C3%B1a%201/REEL_PUBLI_MUSICA%201.mp4" muted playsinline preload="metadata" style="object-fit:cover;"></video>
+      <div class="summ-foot"><div class="summ-num">06 / 07</div><div class="summ-name">Gráfico animado · Música v.1</div></div>
+    </div>
+
+    <div class="summ-card">
+      <span class="sf sf-reel">Reel</span>
+      <video class="summ-media-v" src="referencias/Campa%C3%B1a%201/REEL_PUBLI_MUSICA%20INSTIT.mp4" muted playsinline preload="metadata" style="object-fit:cover;"></video>
+      <div class="summ-foot"><div class="summ-num">07 / 07</div><div class="summ-name">Institucional · Música v.2</div></div>
+    </div>
+
+    <!-- Brand card -->
+    <div style="background:#f3f5f7;border:1.5px dashed rgba(0,0,0,.12);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:22px 18px;">
+      <img src="assets/logo-azul.svg" style="height:36px;">
+      <div style="text-align:center;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,.30);font-family:'Poppins',sans-serif;margin-bottom:5px;">Diplomatura</div>
+        <div style="font-size:14px;font-weight:700;color:#4e5d6c;line-height:1.4;">Educación Emocional<br>y Bienestar · Abril 2026</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+
+</div><!-- /deck -->
+
+<script>
+(function(){
+  const S=document.querySelectorAll('.slide'),T=S.length,
+        C=document.getElementById('counter'),P=document.getElementById('progress');
+  let c=0;
+
+  function go(n){
+    if(n<0||n>=T)return;
+    S[c].classList.remove('active');
+    c=n;
+    S[c].classList.add('active');
+    C.textContent=(c+1)+' / '+T;
+    P.style.width=((c+1)/T*100)+'%';
+  }
+
+  function scale(){
+    const s=Math.min(innerWidth/1920,innerHeight/1080);
+    document.querySelectorAll('.si').forEach(e=>e.style.transform='scale('+s+')');
+  }
+  scale();
+  addEventListener('resize',scale);
+
+  addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();go(c+1);}
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();go(c-1);}
+    if(e.key==='Home')go(0);
+    if(e.key==='End')go(T-1);
+    if(e.key==='f'||e.key==='F'){
+      document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();
+    }
+  });
+
+  document.getElementById('fsBtn').addEventListener('click',function(){
+    document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();
+  });
+
+  let tx=0;
+  addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+  addEventListener('touchend',function(e){
+    const d=e.changedTouches[0].clientX-tx;
+    if(Math.abs(d)>50){d<0?go(c+1):go(c-1);}
+  });
+
+  P.style.width=((1)/T*100)+'%';
+})();
+</script>
+</body>
+</html>
