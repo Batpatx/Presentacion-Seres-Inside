@@ -51,6 +51,19 @@ html,body{font-family:'Montserrat',system-ui,sans-serif;background:#dde1e7;overf
 .fmt-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:var(--rpill);font-size:16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-family:'Poppins',sans-serif;margin-bottom:16px;width:fit-content;}
 .fmt-img{background:rgba(6,153,210,.10);color:var(--blue);border:1.5px solid rgba(6,153,210,.28);}
 .fmt-reel{background:rgba(228,123,2,.08);color:var(--orange);border:1.5px solid rgba(228,123,2,.28);}
+.fmt-car{background:rgba(80,160,80,.10);color:#2d8a3e;border:1.5px solid rgba(80,160,80,.32);}
+
+/* ─── CAROUSEL ──────────────────────── */
+.car-container{position:relative;}
+.car-slide{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease;display:block;}
+.car-slide.car-active{opacity:1;}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.92);border:none;border-radius:50%;width:62px;height:62px;font-size:34px;font-weight:300;line-height:1;cursor:pointer;z-index:20;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.22);color:var(--navy);transition:background .15s;}
+.car-btn:hover{background:#fff;}
+.car-prev{left:18px;}
+.car-next{right:18px;}
+.car-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:20;}
+.car-dot{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.50);transition:background .2s;cursor:pointer;}
+.car-dot.car-dot-active{background:#fff;}
 
 .cname{font-size:26px;font-weight:700;color:var(--navy);line-height:1.30;margin-bottom:10px;}
 .obj-lbl{font-size:14px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,0,0,.32);font-family:'Poppins',sans-serif;margin-bottom:6px;}
@@ -184,7 +197,7 @@ html,body{font-family:'Montserrat',system-ui,sans-serif;background:#dde1e7;overf
 .cover-bg{background:#ffffff;display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
 .stat-n{font-size:65px;font-weight:900;line-height:1;font-family:'Poppins',sans-serif;}
 .stat-l{font-size:17px;font-weight:700;letter-spacing:3px;text-transform:uppercase;font-family:'Poppins',sans-serif;color:rgba(0,0,0,.38);margin-top:5px;}
-.summ-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;width:100%;max-width:1180px;}
+.summ-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;width:100%;max-width:1740px;}
 .summ-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.10);position:relative;}
 .summ-media{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#e0e0e0;}
 .summ-media-v{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#111;}
@@ -264,7 +277,7 @@ html,body{font-family:'Montserrat',system-ui,sans-serif;background:#dde1e7;overf
 
   <div class="lp">
     <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
-    <div class="num-row fu d1"><div class="num">01</div><div class="total">/ 07</div></div>
+    <div class="num-row fu d1"><div class="num">01</div><div class="total">/ 09</div></div>
     <div class="fmt-badge fmt-img fu d2">🖼 Imagen · Feed</div>
     <div class="cname fu d3">Gráfica feed · "Transforma tu manera de enseñar, vivir y acompañar"</div>
     <div class="obj-lbl fu d4">Objetivo</div>
@@ -341,7 +354,7 @@ Desde Seres Inside desarrollamos una diplomatura con certificación internaciona
 
   <div class="lp">
     <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
-    <div class="num-row fu d1"><div class="num">02</div><div class="total">/ 07</div></div>
+    <div class="num-row fu d1"><div class="num">02</div><div class="total">/ 09</div></div>
     <div class="fmt-badge fmt-img fu d2">🖼 Imagen · Feed</div>
     <div class="cname fu d3">Gráfica feed · "Formate desde cualquier lugar del país"</div>
     <div class="obj-lbl fu d4">Objetivo</div>
@@ -418,7 +431,7 @@ Esta diplomatura con certificación internacional está pensada para que desarro
 
   <div class="lp">
     <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
-    <div class="num-row fu d1"><div class="num">03</div><div class="total">/ 07</div></div>
+    <div class="num-row fu d1"><div class="num">03</div><div class="total">/ 09</div></div>
     <div class="fmt-badge fmt-img fu d2">🖼 Imagen · Feed</div>
     <div class="cname fu d3">Gráfica feed · "Inscripciones abiertas"</div>
     <div class="obj-lbl fu d4">Objetivo</div>
@@ -495,7 +508,7 @@ Comunicación, empatía, vínculos, gestión emocional.
 
   <div class="lp">
     <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
-    <div class="num-row fu d1"><div class="num">04</div><div class="total">/ 07</div></div>
+    <div class="num-row fu d1"><div class="num">04</div><div class="total">/ 09</div></div>
     <div class="fmt-badge fmt-reel fu d2">▶ Reel · Testimonio</div>
     <div class="cname fu d3">Reel testimonio · Docente de Chubut — prueba social geográfica</div>
     <div class="obj-lbl fu d4">Objetivo</div>
@@ -575,7 +588,7 @@ Es una experiencia práctica que transforma la forma de trabajar, vincularse y a
 
   <div class="lp">
     <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
-    <div class="num-row fu d1"><div class="num">05</div><div class="total">/ 07</div></div>
+    <div class="num-row fu d1"><div class="num">05</div><div class="total">/ 09</div></div>
     <div class="fmt-badge fmt-reel fu d2">▶ Reel · UGC</div>
     <div class="cname fu d3">Reel UGC · Sol explica la propuesta — formato de alta credibilidad</div>
     <div class="obj-lbl fu d4">Objetivo</div>
@@ -655,7 +668,7 @@ Herramientas que hacen la diferencia en el mundo laboral y en tu vida diaria.
 
   <div class="lp">
     <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
-    <div class="num-row fu d1"><div class="num">06</div><div class="total">/ 07</div></div>
+    <div class="num-row fu d1"><div class="num">06</div><div class="total">/ 09</div></div>
     <div class="fmt-badge fmt-reel fu d2">▶ Reel · Gráfico animado</div>
     <div class="cname fu d3">Reel gráfico · Música v.1 — recordación + conversión</div>
     <div class="obj-lbl fu d4">Objetivo</div>
@@ -735,7 +748,7 @@ Desarrollar habilidades blandas ya no es opcional. Con nuestra diplomatura con c
 
   <div class="lp">
     <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
-    <div class="num-row fu d1"><div class="num">07</div><div class="total">/ 07</div></div>
+    <div class="num-row fu d1"><div class="num">07</div><div class="total">/ 09</div></div>
     <div class="fmt-badge fmt-reel fu d2">▶ Reel · Institucional</div>
     <div class="cname fu d3">Reel institucional · Música v.2 — impacto en 3 segundos</div>
     <div class="obj-lbl fu d4">Objetivo</div>
@@ -811,7 +824,106 @@ Y eso es lo que trabajamos en nuestra diplomatura con certificación internacion
 
 
 <!-- ══════════════════════════════════════════════════════════
-     09 · RESUMEN — Vista de las 7 creatividades
+     09 · GRÁFICA CAMPAÑA 2 — "No todos vivimos en la misma realidad"
+══════════════════════════════════════════════════════════ -->
+<div class="slide">
+<div class="si">
+
+  <div class="lp">
+    <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
+    <div class="num-row fu d1"><div class="num">08</div><div class="total">/ 09</div></div>
+    <div class="fmt-badge fmt-img fu d2">🖼 Imagen · Feed</div>
+    <div class="cname fu d3">Gráfica feed · "No todos vivimos en la misma realidad"</div>
+    <div class="obj-lbl fu d4">Objetivo</div>
+    <div class="obj-txt fu d4">Concientizar sobre la importancia de las habilidades blandas en los vínculos y el mundo laboral. Atraer a profesionales que buscan herramientas prácticas de comunicación y empatía.</div>
+    <div class="cbox fu d5">
+      <div class="cbox-lbl">Caption</div>
+      <div class="cbody">Muchas veces los conflictos no tienen que ver con lo que pasa… sino con cómo cada persona lo interpreta.
+
+No todos vivimos en la misma realidad.
+
+Desde Seres Inside te acercamos una propuesta para trabajar habilidades blandas, hoy fundamentales en el mundo laboral y profesional: la comunicación, la empatía y la forma en la que nos vinculamos con otros.
+
+Este encuentro está pensado como una herramienta práctica para que puedas interpretar mejor situaciones cotidianas y desenvolverte con más claridad en tu trabajo y en tus vínculos.
+
+<span class="cta">Escribinos por WhatsApp y te contamos cómo sumarte.</span></div>
+      <div class="cht">#HabilidadesBlandas #Comunicación #Empatía #SeresInside
+#MundoLaboral #DesarrolloProfesional #Bienestar</div>
+    </div>
+  </div>
+
+  <div class="rp">
+    <div class="ig-desktop fu d3">
+      <div class="ig-d-media img-media">
+        <img src="referencias/Campa%C3%B1a%202/GRAFICAS-%20META%20(1).jpg" alt="No todos vivimos en la misma realidad">
+      </div>
+      <div class="ig-d-info"></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     10 · CARRUSEL CAMPAÑA 2 — "El diferencial no está solo en lo técnico"
+══════════════════════════════════════════════════════════ -->
+<div class="slide">
+<div class="si">
+
+  <div class="lp">
+    <div class="camp-tag fu"><span>Campaña · Diplomatura · Abril 2026</span></div>
+    <div class="num-row fu d1"><div class="num">09</div><div class="total">/ 09</div></div>
+    <div class="fmt-badge fmt-car fu d2">📱 Carrusel · Feed</div>
+    <div class="cname fu d3">Carrusel · "El diferencial no está solo en lo técnico"</div>
+    <div class="obj-lbl fu d4">Objetivo</div>
+    <div class="obj-txt fu d4">Mostrar el diferencial de las habilidades blandas a través de un ciclo de encuentros. Generar interés en personas que quieren formarse de forma práctica y a su ritmo.</div>
+    <div class="cbox fu d5">
+      <div class="cbox-lbl">Caption</div>
+      <div class="cbody">Hoy el diferencial no está solo en lo técnico.
+
+Está en cómo te comunicás, cómo te vinculás y cómo resolvés situaciones en tu día a día.
+
+Eso es lo que hoy el mercado reconoce como habilidades blandas.
+
+Desde Seres Inside creamos un ciclo de encuentros para que puedas desarrollarlas de forma práctica, a lo largo de distintos espacios enfocados en la comunicación, la gestión emocional y los vínculos.
+
+Cada encuentro trabaja una dimensión distinta, con herramientas concretas que podés aplicar en tu trabajo y en tu vida cotidiana.
+
+👉 Podés sumarte a un encuentro puntual o realizar el ciclo completo.
+
+<span class="cta">Escribinos por WhatsApp y te contamos cómo reservar tu lugar.</span></div>
+      <div class="cht">#HabilidadesBlandas #CicloDeEncuentros #SeresInside #Comunicación
+#GestiónEmocional #MundoLaboral #DesarrolloProfesional</div>
+    </div>
+  </div>
+
+  <div class="rp">
+    <div class="ig-desktop fu d3">
+      <div class="ig-d-media img-media car-container" id="carouselC2">
+        <img class="car-slide car-active" src="referencias/Campa%C3%B1a%202/1.jpg" alt="Carrusel imagen 1">
+        <img class="car-slide" src="referencias/Campa%C3%B1a%202/2.jpg" alt="Carrusel imagen 2">
+        <img class="car-slide" src="referencias/Campa%C3%B1a%202/3.jpg" alt="Carrusel imagen 3">
+        <img class="car-slide" src="referencias/Campa%C3%B1a%202/4.jpg" alt="Carrusel imagen 4">
+        <button class="car-btn car-prev" onclick="carNav('carouselC2',-1);event.stopPropagation();">&#8249;</button>
+        <button class="car-btn car-next" onclick="carNav('carouselC2', 1);event.stopPropagation();">&#8250;</button>
+        <div class="car-dots">
+          <span class="car-dot car-dot-active" onclick="carGo('carouselC2',0);event.stopPropagation();"></span>
+          <span class="car-dot" onclick="carGo('carouselC2',1);event.stopPropagation();"></span>
+          <span class="car-dot" onclick="carGo('carouselC2',2);event.stopPropagation();"></span>
+          <span class="car-dot" onclick="carGo('carouselC2',3);event.stopPropagation();"></span>
+        </div>
+      </div>
+      <div class="ig-d-info"></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     11 · RESUMEN — Vista de las 9 creatividades
 ══════════════════════════════════════════════════════════ -->
 <div class="slide">
 <div class="si cover-bg" style="flex-direction:column;align-items:center;justify-content:center;gap:36px;padding:50px 70px;">
@@ -820,7 +932,7 @@ Y eso es lo que trabajamos en nuestra diplomatura con certificación internacion
 
   <div style="text-align:center;position:relative;z-index:2;" class="fu">
     <div style="display:inline-flex;background:rgba(228,123,2,.08);border:1.5px solid rgba(228,123,2,.22);border-radius:var(--rpill);padding:7px 22px;margin-bottom:16px;">
-      <span style="color:var(--orange);font-size:16px;font-weight:800;letter-spacing:3px;text-transform:uppercase;font-family:'Poppins',sans-serif;">Resumen · 7 creatividades · Campaña Diplomatura</span>
+      <span style="color:var(--orange);font-size:16px;font-weight:800;letter-spacing:3px;text-transform:uppercase;font-family:'Poppins',sans-serif;">Resumen · 9 creatividades · Campaña Diplomatura</span>
     </div>
     <h2 style="color:var(--navy);font-size:46px;font-weight:900;letter-spacing:-.02em;">Material listo para activar</h2>
   </div>
@@ -830,43 +942,55 @@ Y eso es lo que trabajamos en nuestra diplomatura con certificación internacion
     <div class="summ-card">
       <span class="sf sf-img">Imagen</span>
       <img class="summ-media" src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META%20(1).jpg" alt="">
-      <div class="summ-foot"><div class="summ-num">01 / 07</div><div class="summ-name">Transforma tu manera de enseñar, vivir y acompañar</div></div>
+      <div class="summ-foot"><div class="summ-num">01 / 09</div><div class="summ-name">Transforma tu manera de enseñar, vivir y acompañar</div></div>
     </div>
 
     <div class="summ-card">
       <span class="sf sf-img">Imagen</span>
       <img class="summ-media" src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META%20(2).jpg" alt="">
-      <div class="summ-foot"><div class="summ-num">02 / 07</div><div class="summ-name">Formate desde cualquier lugar del país</div></div>
+      <div class="summ-foot"><div class="summ-num">02 / 09</div><div class="summ-name">Formate desde cualquier lugar del país</div></div>
     </div>
 
     <div class="summ-card">
       <span class="sf sf-img">Imagen</span>
       <img class="summ-media" src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META.jpg" alt="">
-      <div class="summ-foot"><div class="summ-num">03 / 07</div><div class="summ-name">Inscripciones abiertas</div></div>
+      <div class="summ-foot"><div class="summ-num">03 / 09</div><div class="summ-name">Inscripciones abiertas</div></div>
     </div>
 
     <div class="summ-card">
       <span class="sf sf-reel">Reel</span>
       <video class="summ-media-v" src="referencias/Campa%C3%B1a%201/REEL%202_TESTIMONIO.mp4" muted playsinline preload="metadata" style="object-fit:cover;"></video>
-      <div class="summ-foot"><div class="summ-num">04 / 07</div><div class="summ-name">Testimonio · Docente de Chubut</div></div>
+      <div class="summ-foot"><div class="summ-num">04 / 09</div><div class="summ-name">Testimonio · Docente de Chubut</div></div>
     </div>
 
     <div class="summ-card">
       <span class="sf sf-reel">Reel</span>
       <video class="summ-media-v" src="referencias/Campa%C3%B1a%201/REEL%203_%20UGC%20SOL.mp4" muted playsinline preload="metadata" style="object-fit:cover;"></video>
-      <div class="summ-foot"><div class="summ-num">05 / 07</div><div class="summ-name">UGC · Sol explica la propuesta</div></div>
+      <div class="summ-foot"><div class="summ-num">05 / 09</div><div class="summ-name">UGC · Sol explica la propuesta</div></div>
     </div>
 
     <div class="summ-card">
       <span class="sf sf-reel">Reel</span>
       <video class="summ-media-v" src="referencias/Campa%C3%B1a%201/REEL_PUBLI_MUSICA%201.mp4" muted playsinline preload="metadata" style="object-fit:cover;"></video>
-      <div class="summ-foot"><div class="summ-num">06 / 07</div><div class="summ-name">Gráfico animado · Música v.1</div></div>
+      <div class="summ-foot"><div class="summ-num">06 / 09</div><div class="summ-name">Gráfico animado · Música v.1</div></div>
     </div>
 
     <div class="summ-card">
       <span class="sf sf-reel">Reel</span>
       <video class="summ-media-v" src="referencias/Campa%C3%B1a%201/REEL_PUBLI_MUSICA%20INSTIT.mp4" muted playsinline preload="metadata" style="object-fit:cover;"></video>
-      <div class="summ-foot"><div class="summ-num">07 / 07</div><div class="summ-name">Institucional · Música v.2</div></div>
+      <div class="summ-foot"><div class="summ-num">07 / 09</div><div class="summ-name">Institucional · Música v.2</div></div>
+    </div>
+
+    <div class="summ-card">
+      <span class="sf sf-img">Imagen</span>
+      <img class="summ-media" src="referencias/Campa%C3%B1a%202/GRAFICAS-%20META%20(1).jpg" alt="">
+      <div class="summ-foot"><div class="summ-num">08 / 09</div><div class="summ-name">No todos vivimos en la misma realidad</div></div>
+    </div>
+
+    <div class="summ-card">
+      <span class="sf sf-img" style="background:#2d8a3e;">Carrusel</span>
+      <img class="summ-media" src="referencias/Campa%C3%B1a%202/1.jpg" alt="">
+      <div class="summ-foot"><div class="summ-num">09 / 09</div><div class="summ-name">El diferencial no está solo en lo técnico</div></div>
     </div>
 
     <!-- Brand card -->
@@ -887,6 +1011,29 @@ Y eso es lo que trabajamos en nuestra diplomatura con certificación internacion
 </div><!-- /deck -->
 
 <script>
+// ── Carousel helpers ─────────────────────────────────────
+function carNav(id, dir){
+  const c=document.getElementById(id);
+  const slides=c.querySelectorAll('.car-slide');
+  const dots=c.querySelectorAll('.car-dot');
+  let cur=0;
+  slides.forEach((s,i)=>{if(s.classList.contains('car-active'))cur=i;});
+  slides[cur].classList.remove('car-active');
+  dots[cur].classList.remove('car-dot-active');
+  cur=(cur+dir+slides.length)%slides.length;
+  slides[cur].classList.add('car-active');
+  dots[cur].classList.add('car-dot-active');
+}
+function carGo(id, idx){
+  const c=document.getElementById(id);
+  const slides=c.querySelectorAll('.car-slide');
+  const dots=c.querySelectorAll('.car-dot');
+  slides.forEach(s=>s.classList.remove('car-active'));
+  dots.forEach(d=>d.classList.remove('car-dot-active'));
+  slides[idx].classList.add('car-active');
+  dots[idx].classList.add('car-dot-active');
+}
+
 (function(){
   const S=document.querySelectorAll('.slide'),T=S.length,
         C=document.getElementById('counter'),P=document.getElementById('progress');
