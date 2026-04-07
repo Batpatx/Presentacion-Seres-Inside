@@ -59,7 +59,7 @@ html,body{font-family:'Montserrat',system-ui,sans-serif;background:#dde1e7;overf
 /* Copy box */
 .cbox{background:#f3f5f7;border:1.5px solid rgba(0,0,0,.07);border-left:4px solid var(--orange);border-radius:14px;padding:18px 20px 16px 22px;position:relative;display:flex;flex-direction:column;}
 .cbox-lbl{position:absolute;top:-11px;left:16px;background:var(--orange);color:#fff;font-size:13px;font-weight:900;letter-spacing:2px;text-transform:uppercase;font-family:'Poppins',sans-serif;padding:3px 13px;border-radius:20px;}
-.cbody{font-size:22px;font-weight:500;line-height:1.85;color:var(--navy);white-space:pre-line;font-family:'Poppins',sans-serif;margin-top:4px;flex:1;}
+.cbody{font-size:22px;font-weight:500;line-height:1.55;color:var(--navy);white-space:pre-line;font-family:'Poppins',sans-serif;margin-top:4px;flex:1;}
 .cbody .cu{font-weight:800;color:var(--navy);}
 .cbody .cta{color:var(--orange);font-weight:700;font-style:normal;}
 .cht{font-size:18px;color:var(--blue);margin-top:8px;line-height:1.70;font-family:'Poppins',sans-serif;font-weight:500;flex-shrink:0;}
@@ -70,10 +70,12 @@ html,body{font-family:'Montserrat',system-ui,sans-serif;background:#dde1e7;overf
 /* ─── MEDIA DISPLAY (sin chrome de Instagram) ──────── */
 .ig-desktop{
   display:flex;
+  align-items:center;
+  justify-content:center;
   width:100%;
   height:100%;
   border-radius:0;
-  overflow:hidden;
+  overflow:visible;
   box-shadow:none;
   position:relative;z-index:3;
   transform:none !important;
@@ -83,13 +85,21 @@ html,body{font-family:'Montserrat',system-ui,sans-serif;background:#dde1e7;overf
   overflow:hidden;
   flex-shrink:0;
   position:relative;
-  width:100% !important;
-  height:100% !important;
-  border-radius:16px;
-  box-shadow:0 20px 60px rgba(0,0,0,.18);
+  border-radius:18px;
+  box-shadow:0 24px 64px rgba(0,0,0,.22);
+}
+/* Imágenes cuadradas: llenan el ancho disponible */
+.img-media{
+  width:872px !important;
+  height:872px !important;
+}
+/* Reels 9:16: llenan el alto disponible */
+.reel-media{
+  width:558px !important;
+  height:992px !important;
 }
 .ig-d-media img,.ig-d-media video{
-  width:100%;height:100%;object-fit:contain;display:block;background:#000;
+  width:100%;height:100%;object-fit:cover;display:block;
 }
 .ig-d-media video{cursor:pointer;}
 .ig-reel-tag{display:none;}
@@ -278,7 +288,7 @@ Desde Seres Inside desarrollamos una diplomatura con certificación internaciona
   <div class="rp">
     <div class="ig-desktop fu d3">
       <!-- MEDIA -->
-      <div class="ig-d-media" style="width:520px;height:520px;">
+      <div class="ig-d-media img-media">
         <img src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META%20(1).jpg" alt="Gráfica transforma tu manera">
       </div>
       <!-- INFO -->
@@ -356,7 +366,7 @@ Esta diplomatura con certificación internacional está pensada para que desarro
 
   <div class="rp">
     <div class="ig-desktop fu d3">
-      <div class="ig-d-media" style="width:520px;height:520px;">
+      <div class="ig-d-media img-media">
         <img src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META%20(2).jpg" alt="Gráfica formate desde cualquier lugar">
       </div>
       <div class="ig-d-info" style="height:520px;">
@@ -433,7 +443,7 @@ Comunicación, empatía, vínculos, gestión emocional.
 
   <div class="rp">
     <div class="ig-desktop fu d3">
-      <div class="ig-d-media" style="width:520px;height:520px;">
+      <div class="ig-d-media img-media">
         <img src="referencias/Campa%C3%B1a%201/GRAFICAS-%20META.jpg" alt="Gráfica inscripciones abiertas">
       </div>
       <div class="ig-d-info" style="height:520px;">
@@ -508,7 +518,7 @@ Es una experiencia práctica que transforma la forma de trabajar, vincularse y a
 
   <div class="rp">
     <div class="ig-desktop fu d3">
-      <div class="ig-d-media" style="width:440px;height:780px;position:relative;">
+      <div class="ig-d-media reel-media">
         <video src="referencias/Campa%C3%B1a%201/REEL%202_TESTIMONIO.mp4" autoplay muted playsinline loop style="width:100%;height:100%;object-fit:cover;"></video>
         <div class="ig-reel-tag">▶ REEL</div>
       </div>
@@ -588,7 +598,7 @@ Herramientas que hacen la diferencia en el mundo laboral y en tu vida diaria.
 
   <div class="rp">
     <div class="ig-desktop fu d3">
-      <div class="ig-d-media" style="width:440px;height:780px;position:relative;">
+      <div class="ig-d-media reel-media">
         <video src="referencias/Campa%C3%B1a%201/REEL%203_%20UGC%20SOL.mp4" autoplay muted playsinline loop style="width:100%;height:100%;object-fit:cover;"></video>
         <div class="ig-reel-tag">▶ REEL</div>
       </div>
@@ -668,7 +678,7 @@ Desarrollar habilidades blandas ya no es opcional. Con nuestra diplomatura con c
 
   <div class="rp">
     <div class="ig-desktop fu d3">
-      <div class="ig-d-media" style="width:440px;height:780px;position:relative;">
+      <div class="ig-d-media reel-media">
         <video src="referencias/Campa%C3%B1a%201/REEL_PUBLI_MUSICA%201.mp4" autoplay muted playsinline loop style="width:100%;height:100%;object-fit:cover;"></video>
         <div class="ig-reel-tag">▶ REEL</div>
       </div>
@@ -751,7 +761,7 @@ Y eso es lo que trabajamos en nuestra diplomatura con certificación internacion
 
   <div class="rp">
     <div class="ig-desktop fu d3">
-      <div class="ig-d-media" style="width:440px;height:780px;position:relative;">
+      <div class="ig-d-media reel-media">
         <video src="referencias/Campa%C3%B1a%201/REEL_PUBLI_MUSICA%20INSTIT.mp4" autoplay muted playsinline loop style="width:100%;height:100%;object-fit:cover;"></video>
         <div class="ig-reel-tag">▶ REEL</div>
       </div>
