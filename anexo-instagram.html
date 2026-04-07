@@ -37,7 +37,7 @@ html,body{font-family:'Montserrat',system-ui,sans-serif;background:#dde1e7;overf
 .fbtn:hover{color:var(--orange);}
 
 /* ─── LEFT PANEL (MODO CLARO) ───────── */
-.lp{width:800px;min-width:800px;height:1080px;background:#ffffff;border-right:1px solid rgba(0,0,0,.07);display:flex;flex-direction:column;justify-content:center;padding:56px 72px;position:relative;overflow:hidden;flex-shrink:0;}
+.lp{width:960px;min-width:960px;height:1080px;background:#ffffff;border-right:1px solid rgba(0,0,0,.07);display:flex;flex-direction:column;justify-content:center;padding:56px 72px;position:relative;overflow:hidden;flex-shrink:0;}
 .lp::before{content:'';position:absolute;top:-120px;right:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(228,123,2,.06) 0%,transparent 70%);pointer-events:none;}
 .lp::after{content:'';position:absolute;bottom:-100px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(6,153,210,.07) 0%,transparent 70%);pointer-events:none;}
 
@@ -65,52 +65,38 @@ html,body{font-family:'Montserrat',system-ui,sans-serif;background:#dde1e7;overf
 .cht{font-size:18px;color:var(--blue);margin-top:8px;line-height:1.70;font-family:'Poppins',sans-serif;font-weight:500;flex-shrink:0;}
 
 /* ─── RIGHT PANEL ───────────────────── */
-.rp{flex:1;height:1080px;background:var(--bg);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:10px 0;}
-.rp::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 46%,rgba(255,255,255,.58) 0%,transparent 65%);pointer-events:none;z-index:0;}
-.rp::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,.052) 1px,transparent 1px);background-size:30px 30px;pointer-events:none;z-index:0;}
+.rp{flex:1;height:1080px;background:#f5f6f8;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:44px;}
 
-/* ─── INSTAGRAM DESKTOP MOCKUP ──────── */
-/*  Replicates the real Instagram.com post viewer modal  */
+/* ─── MEDIA DISPLAY (sin chrome de Instagram) ──────── */
 .ig-desktop{
   display:flex;
-  border-radius:4px;
+  width:100%;
+  height:100%;
+  border-radius:0;
   overflow:hidden;
-  box-shadow:0 24px 80px rgba(0,0,0,.22),0 2px 10px rgba(0,0,0,.10);
+  box-shadow:none;
   position:relative;z-index:3;
-  /* reels son 920+info px de alto — escalar para que quepan con margen */
-  transform-origin:center center;
+  transform:none !important;
 }
-/* reels: escala el card completo para que entre en el panel de 1080px */
-.ig-desktop.reel-card{transform:scale(0.95);}
-.ig-desktop.img-card{transform:scale(1);}
-
-/* Left: media area */
 .ig-d-media{
   background:#000;
   overflow:hidden;
   flex-shrink:0;
   position:relative;
+  width:100% !important;
+  height:100% !important;
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,.18);
 }
 .ig-d-media img,.ig-d-media video{
-  width:100%;height:100%;object-fit:cover;display:block;
+  width:100%;height:100%;object-fit:contain;display:block;background:#000;
 }
 .ig-d-media video{cursor:pointer;}
-.ig-reel-tag{
-  position:absolute;top:12px;right:12px;
-  background:rgba(0,0,0,.60);color:#fff;
-  font-size:10px;font-weight:800;padding:4px 10px;
-  border-radius:20px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;
-  letter-spacing:.5px;display:flex;align-items:center;gap:4px;z-index:2;
-}
+.ig-reel-tag{display:none;}
 
-/* Right: info panel */
+/* Right: info panel — oculto */
 .ig-d-info{
-  width:340px;
-  background:#fff;
-  border-left:1px solid rgba(0,0,0,.10);
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
+  display:none;
 }
 
 /* Header */
