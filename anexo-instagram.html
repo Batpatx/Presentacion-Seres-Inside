@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1920">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Seres Inside — Piezas publicitarias para la campaña · Abril 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -207,6 +207,61 @@ html,body{font-family:'Montserrat',system-ui,sans-serif;background:#dde1e7;overf
 .sf{position:absolute;top:8px;left:8px;padding:3px 9px;border-radius:20px;font-size:9.5px;font-weight:800;letter-spacing:.5px;font-family:'Poppins',sans-serif;text-transform:uppercase;}
 .sf-img{background:rgba(6,153,210,.88);color:#fff;}
 .sf-reel{background:rgba(228,123,2,.92);color:#fff;}
+
+/* ─── RESPONSIVE MOBILE ─────────────────────────────────── */
+@media (max-width: 767px) {
+  .si{
+    width:100vw !important;height:100dvh !important;
+    flex-direction:column !important;
+    transform:none !important;
+    overflow-y:auto !important;overflow-x:hidden !important;
+  }
+  .lp{
+    width:100% !important;min-width:unset !important;
+    height:auto !important;
+    padding:18px 16px 14px !important;
+    border-right:none !important;
+    border-bottom:1px solid rgba(0,0,0,.07) !important;
+    flex-shrink:0 !important;
+  }
+  .lp::before,.lp::after{display:none;}
+  .rp{
+    flex:none !important;width:100% !important;
+    height:auto !important;padding:14px 16px 20px !important;
+    flex-shrink:0 !important;
+  }
+  .ig-desktop{width:100% !important;height:auto !important;align-items:flex-start !important;}
+  .ig-d-media.img-media{width:100% !important;height:auto !important;aspect-ratio:1/1 !important;}
+  .ig-d-media.reel-media{
+    width:60vw !important;height:auto !important;
+    aspect-ratio:9/16 !important;max-height:58vh !important;
+  }
+
+  /* Texto info panel */
+  .num{font-size:34px !important;}
+  .total{font-size:16px !important;}
+  .fmt-badge{font-size:11px !important;padding:5px 12px !important;margin-bottom:10px !important;}
+  .camp-tag span{font-size:10px !important;letter-spacing:1.5px !important;}
+  .cname{font-size:15px !important;margin-bottom:7px !important;}
+  .obj-lbl{font-size:10px !important;}
+  .obj-txt{font-size:13px !important;margin-bottom:12px !important;}
+  .cbox{padding:14px 14px 12px 16px !important;}
+  .cbox-lbl{font-size:10px !important;}
+  .cbody{font-size:13px !important;line-height:1.5 !important;}
+  .cht{font-size:11px !important;margin-top:6px !important;}
+
+  /* Cover */
+  .stat-n{font-size:34px !important;}
+  .stat-l{font-size:10px !important;letter-spacing:1.5px !important;}
+
+  /* Summary */
+  .summ-grid{grid-template-columns:repeat(2,1fr) !important;gap:8px !important;}
+
+  /* Chrome */
+  .cnt{font-size:10px !important;padding:5px 10px !important;bottom:12px !important;right:12px !important;}
+  .fbtn{font-size:9px !important;padding:5px 10px !important;bottom:12px !important;left:12px !important;}
+  .pbar{height:3px !important;}
+}
 </style>
 </head>
 <body>
@@ -1324,6 +1379,10 @@ function carGo(id, idx){
   }
 
   function scale(){
+    if(innerWidth<=767){
+      document.querySelectorAll('.si').forEach(e=>e.style.transform='none');
+      return;
+    }
     const s=Math.min(innerWidth/1920,innerHeight/1080);
     document.querySelectorAll('.si').forEach(e=>e.style.transform='scale('+s+')');
   }
